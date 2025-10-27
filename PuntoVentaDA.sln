@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaCliente", "CapaCliente\CapaCliente.csproj", "{CF95A04E-84B0-4280-A34C-C19725193FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{0EB1517C-8117-429F-B544-263405DB7AB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF95A04E-84B0-4280-A34C-C19725193FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF95A04E-84B0-4280-A34C-C19725193FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF95A04E-84B0-4280-A34C-C19725193FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF95A04E-84B0-4280-A34C-C19725193FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB1517C-8117-429F-B544-263405DB7AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB1517C-8117-429F-B544-263405DB7AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB1517C-8117-429F-B544-263405DB7AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB1517C-8117-429F-B544-263405DB7AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C7D380B-F382-4273-808B-EF9906B0B78F}
+	EndGlobalSection
+EndGlobal

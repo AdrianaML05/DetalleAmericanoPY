@@ -1,0 +1,10 @@
+﻿.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+packages/
+*.cache
+[Dd]ebug/
+[Rr]elease/
