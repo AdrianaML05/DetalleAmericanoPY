@@ -50,6 +50,7 @@
     <Compile Include="CLASES\Conexion.cs" />
     <Compile Include="CLASES\Domicilios.cs" />
     <Compile Include="CLASES\Empleados.cs" />
+    <Compile Include="CLASES\Herramientas.cs" />
     <Compile Include="CLASES\Paqueteria.cs" />
     <Compile Include="CLASES\Productos.cs" />
     <Compile Include="CLASES\Proveedores.cs" />
@@ -86,6 +87,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

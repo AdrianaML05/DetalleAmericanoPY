@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.TXTFILTRO = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.BTNCANCELAR = new System.Windows.Forms.Button();
+            this.BTNACEPTAR = new System.Windows.Forms.Button();
             this.BTNBUSCAR = new System.Windows.Forms.Button();
-            this.DgProductos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).BeginInit();
+            this.DgPaqueteria = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgPaqueteria)).BeginInit();
             this.SuspendLayout();
             // 
             // TXTFILTRO
@@ -45,26 +45,29 @@
             this.TXTFILTRO.Name = "TXTFILTRO";
             this.TXTFILTRO.Size = new System.Drawing.Size(397, 37);
             this.TXTFILTRO.TabIndex = 43;
+            this.TXTFILTRO.TextChanged += new System.EventHandler(this.TXTFILTRO_TextChanged);
             // 
-            // btnCancelar
+            // BTNCANCELAR
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(806, 546);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(132, 48);
-            this.btnCancelar.TabIndex = 42;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.BTNCANCELAR.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNCANCELAR.Location = new System.Drawing.Point(806, 546);
+            this.BTNCANCELAR.Name = "BTNCANCELAR";
+            this.BTNCANCELAR.Size = new System.Drawing.Size(132, 48);
+            this.BTNCANCELAR.TabIndex = 42;
+            this.BTNCANCELAR.Text = "CANCELAR";
+            this.BTNCANCELAR.UseVisualStyleBackColor = true;
+            this.BTNCANCELAR.Click += new System.EventHandler(this.BTNCANCELAR_Click);
             // 
-            // btnAceptar
+            // BTNACEPTAR
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(806, 475);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(130, 47);
-            this.btnAceptar.TabIndex = 41;
-            this.btnAceptar.Text = "ACEPTAR";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.BTNACEPTAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNACEPTAR.Location = new System.Drawing.Point(806, 475);
+            this.BTNACEPTAR.Name = "BTNACEPTAR";
+            this.BTNACEPTAR.Size = new System.Drawing.Size(130, 47);
+            this.BTNACEPTAR.TabIndex = 41;
+            this.BTNACEPTAR.Text = "ACEPTAR";
+            this.BTNACEPTAR.UseVisualStyleBackColor = true;
+            this.BTNACEPTAR.Click += new System.EventHandler(this.BTNACEPTAR_Click);
             // 
             // BTNBUSCAR
             // 
@@ -75,17 +78,21 @@
             this.BTNBUSCAR.TabIndex = 40;
             this.BTNBUSCAR.Text = "BUSCAR";
             this.BTNBUSCAR.UseVisualStyleBackColor = true;
+            this.BTNBUSCAR.Click += new System.EventHandler(this.BTNBUSCAR_Click);
             // 
-            // DgProductos
+            // DgPaqueteria
             // 
-            this.DgProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.DgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgProductos.Location = new System.Drawing.Point(23, 186);
-            this.DgProductos.Name = "DgProductos";
-            this.DgProductos.RowHeadersWidth = 51;
-            this.DgProductos.RowTemplate.Height = 24;
-            this.DgProductos.Size = new System.Drawing.Size(747, 408);
-            this.DgProductos.TabIndex = 44;
+            this.DgPaqueteria.AllowUserToAddRows = false;
+            this.DgPaqueteria.AllowUserToDeleteRows = false;
+            this.DgPaqueteria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.DgPaqueteria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgPaqueteria.Location = new System.Drawing.Point(23, 186);
+            this.DgPaqueteria.Name = "DgPaqueteria";
+            this.DgPaqueteria.ReadOnly = true;
+            this.DgPaqueteria.RowHeadersWidth = 51;
+            this.DgPaqueteria.RowTemplate.Height = 24;
+            this.DgPaqueteria.Size = new System.Drawing.Size(747, 408);
+            this.DgPaqueteria.TabIndex = 44;
             // 
             // BusquedaPaqueteria
             // 
@@ -94,13 +101,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(148)))), ((int)(((byte)(209)))));
             this.ClientSize = new System.Drawing.Size(960, 660);
             this.Controls.Add(this.TXTFILTRO);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.BTNCANCELAR);
+            this.Controls.Add(this.BTNACEPTAR);
             this.Controls.Add(this.BTNBUSCAR);
-            this.Controls.Add(this.DgProductos);
+            this.Controls.Add(this.DgPaqueteria);
             this.Name = "BusquedaPaqueteria";
             this.Text = "BusquedaPaqueteria";
-            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).EndInit();
+            this.Load += new System.EventHandler(this.BusquedaPaqueteria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgPaqueteria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,9 +117,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox TXTFILTRO;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button BTNCANCELAR;
+        private System.Windows.Forms.Button BTNACEPTAR;
         private System.Windows.Forms.Button BTNBUSCAR;
-        public System.Windows.Forms.DataGridView DgProductos;
+        public System.Windows.Forms.DataGridView DgPaqueteria;
     }
 }

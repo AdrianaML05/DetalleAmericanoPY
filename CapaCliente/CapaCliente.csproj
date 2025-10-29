@@ -386,5 +386,11 @@
   <ItemGroup>
     <None Include="Resources\tarjeta-de-credito %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{0eb1517c-8117-429f-b544-263405db7ab4}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
