@@ -32,8 +32,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.BTNBUSCAR = new System.Windows.Forms.Button();
-            this.DgProductos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).BeginInit();
+            this.DgDomicilio = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgDomicilio)).BeginInit();
             this.SuspendLayout();
             // 
             // TXTFILTRO
@@ -45,6 +45,7 @@
             this.TXTFILTRO.Name = "TXTFILTRO";
             this.TXTFILTRO.Size = new System.Drawing.Size(397, 37);
             this.TXTFILTRO.TabIndex = 38;
+            this.TXTFILTRO.TextChanged += new System.EventHandler(this.TXTFILTRO_TextChanged);
             // 
             // btnCancelar
             // 
@@ -55,6 +56,7 @@
             this.btnCancelar.TabIndex = 37;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -65,6 +67,7 @@
             this.btnAceptar.TabIndex = 36;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // BTNBUSCAR
             // 
@@ -75,17 +78,19 @@
             this.BTNBUSCAR.TabIndex = 35;
             this.BTNBUSCAR.Text = "BUSCAR";
             this.BTNBUSCAR.UseVisualStyleBackColor = true;
+            this.BTNBUSCAR.Click += new System.EventHandler(this.BTNBUSCAR_Click);
             // 
-            // DgProductos
+            // DgDomicilio
             // 
-            this.DgProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.DgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgProductos.Location = new System.Drawing.Point(22, 189);
-            this.DgProductos.Name = "DgProductos";
-            this.DgProductos.RowHeadersWidth = 51;
-            this.DgProductos.RowTemplate.Height = 24;
-            this.DgProductos.Size = new System.Drawing.Size(747, 408);
-            this.DgProductos.TabIndex = 39;
+            this.DgDomicilio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.DgDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgDomicilio.Location = new System.Drawing.Point(22, 189);
+            this.DgDomicilio.Name = "DgDomicilio";
+            this.DgDomicilio.RowHeadersWidth = 51;
+            this.DgDomicilio.RowTemplate.Height = 24;
+            this.DgDomicilio.Size = new System.Drawing.Size(747, 408);
+            this.DgDomicilio.TabIndex = 39;
+            this.DgDomicilio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgDomicilio_CellClick);
             // 
             // BusquedaDomicilios
             // 
@@ -97,10 +102,11 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.BTNBUSCAR);
-            this.Controls.Add(this.DgProductos);
+            this.Controls.Add(this.DgDomicilio);
             this.Name = "BusquedaDomicilios";
             this.Text = "BusquedaDomicilios";
-            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).EndInit();
+            this.Load += new System.EventHandler(this.BusquedaDomicilios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgDomicilio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +118,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button BTNBUSCAR;
-        public System.Windows.Forms.DataGridView DgProductos;
+        public System.Windows.Forms.DataGridView DgDomicilio;
     }
 }

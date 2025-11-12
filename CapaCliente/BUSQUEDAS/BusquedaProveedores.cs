@@ -26,6 +26,7 @@ namespace CapaCliente.BUSQUEDAS
         {
             try
             {
+
                 DgProveedores.Rows[0].Selected = true;
             }
             catch { }
@@ -38,6 +39,7 @@ namespace CapaCliente.BUSQUEDAS
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             DgProveedores.DataSource = dt;
+            DgProveedores.Columns[0].Visible = false; // Oculta la primera columna (ID)
             con.Close();
         }
 
@@ -55,15 +57,18 @@ namespace CapaCliente.BUSQUEDAS
         {
             cargardg();
         }
-        private void DgProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = DgProveedores.CurrentRow.Index;
-            DgProveedores.Rows[i].Selected = true;
-        }
+        
 
         private void BTNACEPTAR_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void DgProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = DgProveedores.CurrentRow.Index;
+            DgProveedores.Rows[i].Selected = true;
+
         }
     }
 }

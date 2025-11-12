@@ -34,7 +34,6 @@
             this.button9 = new System.Windows.Forms.Button();
             this.TXTNOMBRE = new System.Windows.Forms.TextBox();
             this.TXTID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.BTNGUARDAR = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,18 +46,20 @@
             // TXTTELEFONO
             // 
             this.TXTTELEFONO.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTTELEFONO.Location = new System.Drawing.Point(244, 304);
+            this.TXTTELEFONO.Location = new System.Drawing.Point(258, 248);
+            this.TXTTELEFONO.MaxLength = 10;
             this.TXTTELEFONO.Multiline = true;
             this.TXTTELEFONO.Name = "TXTTELEFONO";
             this.TXTTELEFONO.Size = new System.Drawing.Size(276, 31);
-            this.TXTTELEFONO.TabIndex = 118;
+            this.TXTTELEFONO.TabIndex = 2;
+            this.TXTTELEFONO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTTELEFONO_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(74, 306);
+            this.label2.Location = new System.Drawing.Point(88, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 25);
             this.label2.TabIndex = 117;
@@ -82,7 +83,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(636, 78);
             this.button9.TabIndex = 116;
-            this.button9.Text = "REGRESAR";
+            this.button9.Text = "CERRAR";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -90,38 +91,29 @@
             // TXTNOMBRE
             // 
             this.TXTNOMBRE.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTNOMBRE.Location = new System.Drawing.Point(244, 250);
+            this.TXTNOMBRE.Location = new System.Drawing.Point(258, 194);
             this.TXTNOMBRE.Multiline = true;
             this.TXTNOMBRE.Name = "TXTNOMBRE";
             this.TXTNOMBRE.Size = new System.Drawing.Size(276, 31);
-            this.TXTNOMBRE.TabIndex = 115;
+            this.TXTNOMBRE.TabIndex = 1;
             // 
             // TXTID
             // 
             this.TXTID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTID.Location = new System.Drawing.Point(244, 193);
+            this.TXTID.Location = new System.Drawing.Point(12, 39);
             this.TXTID.Multiline = true;
             this.TXTID.Name = "TXTID";
-            this.TXTID.Size = new System.Drawing.Size(276, 36);
+            this.TXTID.ReadOnly = true;
+            this.TXTID.Size = new System.Drawing.Size(28, 36);
             this.TXTID.TabIndex = 114;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(175, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 25);
-            this.label4.TabIndex = 113;
-            this.label4.Text = "ID :";
+            this.TXTID.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(99, 254);
+            this.label1.Location = new System.Drawing.Point(113, 198);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 25);
             this.label1.TabIndex = 112;
@@ -186,9 +178,9 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.TXTNOMBRE);
             this.Controls.Add(this.TXTID);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmProveedores";
             this.Text = "frmProveedores";
@@ -207,7 +199,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox TXTNOMBRE;
         private System.Windows.Forms.TextBox TXTID;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem BTNGUARDAR;

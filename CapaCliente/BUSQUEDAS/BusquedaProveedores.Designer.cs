@@ -93,6 +93,7 @@
             this.DgProveedores.RowTemplate.Height = 24;
             this.DgProveedores.Size = new System.Drawing.Size(747, 408);
             this.DgProveedores.TabIndex = 44;
+            this.DgProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProveedores_CellClick);
             // 
             // BusquedaProveedores
             // 

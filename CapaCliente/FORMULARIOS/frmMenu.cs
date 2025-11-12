@@ -21,35 +21,52 @@ namespace CapaCliente.FORMULARIOS
         {
 
         }
+        public void abrirformulario(object formopen)
+        {
+            if (this.Abrirform.Controls.Count > 0)
+                this.Abrirform.Controls.RemoveAt(0);
+            Form fh = formopen as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.Abrirform.Controls.Add(fh);
+            this.Abrirform.Tag = fh;
+            fh.Show();
+
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmVenta x = new frmVenta();
-            x.ShowDialog();
+            abrirformulario(new frmVenta());
+            //frmVenta x = new frmVenta();
+            //x.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmEmpleados x = new frmEmpleados();
-            x.ShowDialog();
+            abrirformulario(new frmEmpleados());
+            //frmEmpleados x = new frmEmpleados();
+            //x.ShowDialog();
         }
 
         private void PRODUCTOS_Click(object sender, EventArgs e)
         {
-            frmClientes x = new frmClientes();
-            x.ShowDialog();
+            abrirformulario(new frmClientes());
+            //frmClientes x = new frmClientes();
+            //x.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmProductos x = new frmProductos();
-            x.ShowDialog();
+            abrirformulario(new frmProductos());
+            //frmProductos x = new frmProductos();
+            //x.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmPedidos x = new frmPedidos();
-            x.ShowDialog();
+            abrirformulario(new frmPedidos());
+            //frmPedidos x = new frmPedidos();
+            //x.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -66,32 +83,37 @@ namespace CapaCliente.FORMULARIOS
 
         private void button5_Click(object sender, EventArgs e)
         {
-            frmDomicilios x = new frmDomicilios();
-            x.ShowDialog();
+            abrirformulario(new frmDomicilios());
+            //frmDomicilios x = new frmDomicilios();
+            //x.ShowDialog();
         }
 
         private void INVENTARIO_Click(object sender, EventArgs e)
         {
-            frmInventario x = new frmInventario();
-            x.ShowDialog();
+            abrirformulario(new frmInventario());
+            //frmInventario x = new frmInventario();
+            //x.ShowDialog();
         }
 
         private void PROVEEDORES_Click(object sender, EventArgs e)
         {
-            frmProveedores x = new frmProveedores();
-            x.ShowDialog();
+            abrirformulario(new frmProveedores());
+            //frmProveedores x = new frmProveedores();
+            //x.ShowDialog();
         }
 
         private void COMPRA_Click(object sender, EventArgs e)
         {
-            frmCompra x = new frmCompra();
-            x.ShowDialog();
+            abrirformulario(new frmCompra());
+            //frmCompra x = new frmCompra();
+            //x.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmEnvios x = new frmEnvios();
-            x.ShowDialog();
+            abrirformulario(new frmEnvios());
+            //frmEnvios x = new frmEnvios();
+            //x.ShowDialog();
         }
 
         private void REGRESAR_Click(object sender, EventArgs e)
@@ -101,8 +123,9 @@ namespace CapaCliente.FORMULARIOS
 
         private void button10_Click(object sender, EventArgs e)
         {
-            frmPaqueteria x = new frmPaqueteria();
-            x.ShowDialog();
+            abrirformulario(new frmPaqueteria());
+            //frmPaqueteria x = new frmPaqueteria();
+            //x.ShowDialog();
         }
     }
 }

@@ -84,6 +84,7 @@
             // 
             this.DgPaqueteria.AllowUserToAddRows = false;
             this.DgPaqueteria.AllowUserToDeleteRows = false;
+            this.DgPaqueteria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgPaqueteria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.DgPaqueteria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgPaqueteria.Location = new System.Drawing.Point(23, 186);
@@ -93,6 +94,7 @@
             this.DgPaqueteria.RowTemplate.Height = 24;
             this.DgPaqueteria.Size = new System.Drawing.Size(747, 408);
             this.DgPaqueteria.TabIndex = 44;
+            this.DgPaqueteria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgPaqueteria_CellClick);
             // 
             // BusquedaPaqueteria
             // 

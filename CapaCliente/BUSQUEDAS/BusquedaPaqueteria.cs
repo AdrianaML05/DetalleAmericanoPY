@@ -38,6 +38,7 @@ namespace CapaCliente.BUSQUEDAS
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             DgPaqueteria.DataSource = dt;
+            DgPaqueteria.Columns[0].Visible = false;
             con.Close();
         }
 
@@ -55,15 +56,17 @@ namespace CapaCliente.BUSQUEDAS
         {
             cargardg();
         }
-        private void DgPaqueteria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = DgPaqueteria.CurrentRow.Index;
-            DgPaqueteria.Rows[i].Selected = true;
-        }
+        
 
         private void BTNACEPTAR_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void DgPaqueteria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = DgPaqueteria.CurrentRow.Index;
+            DgPaqueteria.Rows[i].Selected = true;
         }
     }
 }

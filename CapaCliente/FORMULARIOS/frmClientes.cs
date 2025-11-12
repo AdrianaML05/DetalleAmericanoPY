@@ -31,7 +31,8 @@ namespace CapaCliente.FORMULARIOS
 
         private void button9_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            //DialogResult = DialogResult.Cancel;
+            this.Close();
         }
         
 
@@ -83,12 +84,12 @@ namespace CapaCliente.FORMULARIOS
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(TXTAPELLIDOPATERNO.Text))
-            {
-                MessageBox.Show("El campo APELLIDO PATERNO es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTAPELLIDOPATERNO.Focus();
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(TXTAPELLIDOPATERNO.Text))
+            //{
+            //    MessageBox.Show("El campo APELLIDO PATERNO es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    TXTAPELLIDOPATERNO.Focus();
+            //    return false;
+            //}
 
             if (string.IsNullOrWhiteSpace(TXTAPELLIDOMATERNO.Text))
             {
@@ -159,6 +160,7 @@ namespace CapaCliente.FORMULARIOS
                 TXTAPELLIDOPATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
                 TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["AprllidoMa"].Value.ToString();
                 TXTTELEFONO.Text = x.DgClientes.SelectedRows[0].Cells["NumeroTel"].Value.ToString();
+                TXTCORREO.Text = x.DgClientes.SelectedRows[0].Cells["Correo"].Value.ToString();
                 DTPFECHANACIMIENTO.Text = x.DgClientes.SelectedRows[0].Cells["FechaNacimiento"].Value.ToString();
                 TXTVICITA.Text = x.DgClientes.SelectedRows[0].Cells["numVicita"].Value.ToString();
                 TXTTIPOCLIENTE.Text = x.DgClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
@@ -183,6 +185,14 @@ namespace CapaCliente.FORMULARIOS
             else
             {
                 MessageBox.Show("No se encontro el elemento a eliminar");
+            }
+        }
+
+        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea el carácter
             }
         }
     }

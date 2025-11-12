@@ -41,7 +41,7 @@ namespace CapaNegocio.CLASES
             comando.Parameters.AddWithValue("@NumeroTel", NumeroTel);
             comando.Parameters.AddWithValue("@Correo", Correo);
             comando.Parameters.AddWithValue("@FechaNacimiento", FechaNacimiento);
-            comando.Parameters.AddWithValue("@numVisita", numVicita);
+            comando.Parameters.AddWithValue("@numVicita", numVicita);
             comando.Parameters.AddWithValue("@TipoCliente", TipoCliente);
             con.Open(); //Abre conexion
             comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta

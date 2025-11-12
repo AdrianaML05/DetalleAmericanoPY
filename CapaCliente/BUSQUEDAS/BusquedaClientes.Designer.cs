@@ -50,7 +50,7 @@
             // BTNCANCELAR
             // 
             this.BTNCANCELAR.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNCANCELAR.Location = new System.Drawing.Point(819, 520);
+            this.BTNCANCELAR.Location = new System.Drawing.Point(1025, 520);
             this.BTNCANCELAR.Name = "BTNCANCELAR";
             this.BTNCANCELAR.Size = new System.Drawing.Size(132, 48);
             this.BTNCANCELAR.TabIndex = 32;
@@ -61,7 +61,7 @@
             // BTNACEPTAR
             // 
             this.BTNACEPTAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNACEPTAR.Location = new System.Drawing.Point(819, 449);
+            this.BTNACEPTAR.Location = new System.Drawing.Point(1025, 449);
             this.BTNACEPTAR.Name = "BTNACEPTAR";
             this.BTNACEPTAR.Size = new System.Drawing.Size(130, 47);
             this.BTNACEPTAR.TabIndex = 31;
@@ -84,6 +84,7 @@
             // 
             this.DgClientes.AllowUserToAddRows = false;
             this.DgClientes.AllowUserToDeleteRows = false;
+            this.DgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DgClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.DgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgClientes.Location = new System.Drawing.Point(36, 160);
@@ -91,15 +92,16 @@
             this.DgClientes.ReadOnly = true;
             this.DgClientes.RowHeadersWidth = 51;
             this.DgClientes.RowTemplate.Height = 24;
-            this.DgClientes.Size = new System.Drawing.Size(747, 408);
+            this.DgClientes.Size = new System.Drawing.Size(983, 408);
             this.DgClientes.TabIndex = 34;
+            this.DgClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgClientes_CellClick);
             // 
             // BusquedaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(148)))), ((int)(((byte)(209)))));
-            this.ClientSize = new System.Drawing.Size(987, 622);
+            this.ClientSize = new System.Drawing.Size(1212, 622);
             this.Controls.Add(this.TXTFILTRO);
             this.Controls.Add(this.BTNCANCELAR);
             this.Controls.Add(this.BTNACEPTAR);

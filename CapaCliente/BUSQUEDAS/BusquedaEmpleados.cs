@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio.CLASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,10 +34,15 @@ namespace CapaCliente.BUSQUEDAS
         {
             DataTable dt = new DataTable();
             con.Open();
-            SqlCommand cmd = new SqlCommand($"select * from catEmpleados", con);
+            SqlCommand cmd = new SqlCommand($"SELECT idEmpleados, Nombre, ApellidoPa, ApellidoMa, CONCAT(Nombre, ' ', ApellidoPa, ' ', ApellidoMa) as NombreCompleto, Telefono, Correo, RFC, CURP, Puesto FROM catEmpleados", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             DgEmpleados.DataSource = dt;
+            // Ocultar columnas que no quieres ver en el grid
+            DgEmpleados.Columns["idEmpleados"].Visible = false;
+            DgEmpleados.Columns["Nombre"].Visible = false;
+            DgEmpleados.Columns["ApellidoPa"].Visible = false;
+            DgEmpleados.Columns["ApellidoMa"].Visible = false;
             con.Close();
         }
 
@@ -56,15 +62,17 @@ namespace CapaCliente.BUSQUEDAS
 
         }
 
-        private void DgEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = DgEmpleados.CurrentRow.Index;
-            DgEmpleados.Rows[i].Selected = true;
-        }
+        
 
         private void BTNACEPTAR_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+        private void DgEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = DgEmpleados.CurrentRow.Index;
+            DgEmpleados.Rows[i].Selected = true;
         }
     }
 }

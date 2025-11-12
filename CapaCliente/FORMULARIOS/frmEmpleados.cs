@@ -27,7 +27,7 @@ namespace CapaCliente.FORMULARIOS
 
         private void button9_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
@@ -86,12 +86,12 @@ namespace CapaCliente.FORMULARIOS
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(TXTAPELLIDOPATERNO.Text))
-            {
-                MessageBox.Show("El campo APELLIDO PATERNO es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTAPELLIDOPATERNO.Focus();
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(TXTAPELLIDOPATERNO.Text))
+            //{
+            //    MessageBox.Show("El campo APELLIDO PATERNO es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    TXTAPELLIDOPATERNO.Focus();
+            //    return false;
+            //}
 
             if (string.IsNullOrWhiteSpace(TXTAPELLIDOMATERNO.Text))
             {
@@ -171,6 +171,19 @@ namespace CapaCliente.FORMULARIOS
             else
             {
                 MessageBox.Show("No se encontro el elemento a eliminar");
+            }
+        }
+
+        private void TXTTELEFONO_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea el carácter
             }
         }
     }

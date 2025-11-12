@@ -83,6 +83,7 @@
             // 
             this.DgEmpleados.AllowUserToAddRows = false;
             this.DgEmpleados.AllowUserToDeleteRows = false;
+            this.DgEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.DgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgEmpleados.Location = new System.Drawing.Point(32, 153);
@@ -92,6 +93,7 @@
             this.DgEmpleados.RowTemplate.Height = 24;
             this.DgEmpleados.Size = new System.Drawing.Size(747, 408);
             this.DgEmpleados.TabIndex = 39;
+            this.DgEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgEmpleados_CellClick);
             // 
             // BusquedaEmpleados
             // 
