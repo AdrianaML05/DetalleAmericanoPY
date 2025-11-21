@@ -54,6 +54,7 @@
     <Compile Include="CLASES\Paqueteria.cs" />
     <Compile Include="CLASES\Productos.cs" />
     <Compile Include="CLASES\Proveedores.cs" />
+    <Compile Include="CLASES\Ventas.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
