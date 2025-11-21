@@ -14,8 +14,8 @@ namespace CapaNegocio.CLASES
         SqlConnection con = new SqlConnection(co.conexion); //Trae todo lo que el metodo conexion contiene, permite la conexion BDD.
         SqlCommand comando = new SqlCommand();
 
-        public int idCliente, numVicita;
-        public string Nombre, ApellidoPa, AprllidoMa, NumeroTel, Correo, TipoCliente;
+        public int idCliente, numVisita;
+        public string Nombre, ApellidoPa, ApellidoMa, NumeroTel, Correo, TipoCliente;
         public DateTime FechaNacimiento;
 
         public Clientes()
@@ -37,11 +37,11 @@ namespace CapaNegocio.CLASES
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@ApellidoPa", ApellidoPa);
-            comando.Parameters.AddWithValue("@AprllidoMa", AprllidoMa);
+            comando.Parameters.AddWithValue("@AprllidoMa", ApellidoMa);
             comando.Parameters.AddWithValue("@NumeroTel", NumeroTel);
             comando.Parameters.AddWithValue("@Correo", Correo);
             comando.Parameters.AddWithValue("@FechaNacimiento", FechaNacimiento);
-            comando.Parameters.AddWithValue("@numVicita", numVicita);
+            comando.Parameters.AddWithValue("@numVisita", numVisita);
             comando.Parameters.AddWithValue("@TipoCliente", TipoCliente);
             con.Open(); //Abre conexion
             comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta

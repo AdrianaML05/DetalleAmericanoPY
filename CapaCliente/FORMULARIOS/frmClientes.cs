@@ -44,7 +44,7 @@ namespace CapaCliente.FORMULARIOS
             TXTAPELLIDOMATERNO.Clear();
             TXTTELEFONO.Clear();
             TXTCORREO.Clear();
-            TXTVICITA.Clear();
+            TXTVISITA.Clear();
             TXTTIPOCLIENTE.Clear();
             CapaNegocio.CLASES.Herramientas h = new Herramientas();
             TXTID.Text = h.consecutivo("idCliente", "catClientes").ToString();
@@ -53,7 +53,7 @@ namespace CapaCliente.FORMULARIOS
             TXTAPELLIDOMATERNO.Focus();
             TXTTELEFONO.Focus();
             TXTCORREO.Focus();
-            TXTVICITA.Focus();
+            TXTVISITA.Focus();
             TXTTIPOCLIENTE.Focus();
         }
         bool encontro()
@@ -110,10 +110,10 @@ namespace CapaCliente.FORMULARIOS
                 TXTCORREO.Focus();
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(TXTVICITA.Text))
+            if (string.IsNullOrWhiteSpace(TXTVISITA.Text))
             {
-                MessageBox.Show("El campo VICITA es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TXTVICITA.Focus();
+                MessageBox.Show("El campo VISITA es obligatorio", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TXTVISITA.Focus();
                 return false;
             }
             if (string.IsNullOrWhiteSpace(TXTTIPOCLIENTE.Text))
@@ -138,11 +138,11 @@ namespace CapaCliente.FORMULARIOS
             x.idCliente = int.Parse(TXTID.Text);
             x.Nombre = TXTNOMBRE.Text.Trim();
             x.ApellidoPa = TXTAPELLIDOPATERNO.Text.Trim();
-            x.AprllidoMa = TXTAPELLIDOMATERNO.Text.Trim();
+            x.ApellidoMa = TXTAPELLIDOMATERNO.Text.Trim();
             x.NumeroTel = TXTTELEFONO.Text.Trim();
             x.Correo = TXTCORREO.Text.Trim();
             x.FechaNacimiento = DTPFECHANACIMIENTO.Value.Date; // Para DateTimePicke
-            x.numVicita = int.Parse(TXTVICITA.Text);
+            x.numVisita = int.Parse(TXTVISITA.Text);
             x.TipoCliente = TXTTIPOCLIENTE.Text.Trim();
 
             MessageBox.Show(x.Guardar());
@@ -158,11 +158,11 @@ namespace CapaCliente.FORMULARIOS
                 TXTID.Text = x.DgClientes.SelectedRows[0].Cells["idCliente"].Value.ToString();
                 TXTNOMBRE.Text = x.DgClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
                 TXTAPELLIDOPATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
-                TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["AprllidoMa"].Value.ToString();
+                TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
                 TXTTELEFONO.Text = x.DgClientes.SelectedRows[0].Cells["NumeroTel"].Value.ToString();
                 TXTCORREO.Text = x.DgClientes.SelectedRows[0].Cells["Correo"].Value.ToString();
                 DTPFECHANACIMIENTO.Text = x.DgClientes.SelectedRows[0].Cells["FechaNacimiento"].Value.ToString();
-                TXTVICITA.Text = x.DgClientes.SelectedRows[0].Cells["numVicita"].Value.ToString();
+                TXTVISITA.Text = x.DgClientes.SelectedRows[0].Cells["numVisita"].Value.ToString();
                 TXTTIPOCLIENTE.Text = x.DgClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
             }
         }

@@ -35,7 +35,7 @@
             this.BNTLIMPIAR = new System.Windows.Forms.ToolStripMenuItem();
             this.BNTELIMINAR = new System.Windows.Forms.ToolStripMenuItem();
             this.label9 = new System.Windows.Forms.Label();
-            this.TXTVICITA = new System.Windows.Forms.TextBox();
+            this.TXTVISITA = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TXTTELEFONO = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -114,14 +114,14 @@
             this.label9.TabIndex = 143;
             this.label9.Text = "TIPO DE CLIENTE :";
             // 
-            // TXTVICITA
+            // TXTVISITA
             // 
-            this.TXTVICITA.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTVICITA.Location = new System.Drawing.Point(391, 463);
-            this.TXTVICITA.Multiline = true;
-            this.TXTVICITA.Name = "TXTVICITA";
-            this.TXTVICITA.Size = new System.Drawing.Size(437, 34);
-            this.TXTVICITA.TabIndex = 7;
+            this.TXTVISITA.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTVISITA.Location = new System.Drawing.Point(391, 463);
+            this.TXTVISITA.Multiline = true;
+            this.TXTVISITA.Name = "TXTVISITA";
+            this.TXTVISITA.Size = new System.Drawing.Size(437, 34);
+            this.TXTVISITA.TabIndex = 7;
             // 
             // label8
             // 
@@ -310,7 +310,7 @@
             this.Controls.Add(this.DTPFECHANACIMIENTO);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.TXTVICITA);
+            this.Controls.Add(this.TXTVISITA);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TXTTELEFONO);
             this.Controls.Add(this.label6);
@@ -343,7 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem BNTELIMINAR;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TXTVICITA;
+        private System.Windows.Forms.TextBox TXTVISITA;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TXTTELEFONO;
         private System.Windows.Forms.Label label6;

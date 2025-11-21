@@ -199,7 +199,7 @@ namespace CapaCliente.FORMULARIOS
             mun.idCliente = Convert.ToInt32(CBCLIENTE.SelectedValue);
             mun.idMunicipio = Convert.ToInt32(CBMUNICIPIO.SelectedValue);
             mun.nombreDomicilio = TXTNOMBRE.Text.Trim(); // Este es el campo "NOMBRE"
-            mun.numExtrior = TXTNUMEXTERIOR.Text.Trim();
+            mun.numExterior = TXTNUMEXTERIOR.Text.Trim();
             mun.numInterior = TXTNUMINTERIOR.Text.Trim();
             mun.calle = TXTCALLE.Text.Trim();
             mun.CP = TXTCP.Text.Trim();

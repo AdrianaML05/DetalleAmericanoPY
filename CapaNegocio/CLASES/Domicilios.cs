@@ -15,7 +15,7 @@ namespace CapaNegocio.CLASES
         SqlCommand comando = new SqlCommand();
 
         public int idDomicilio, idCliente, idMunicipio;
-        public string nombreDomicilio, numExtrior, numInterior, calle, CP;
+        public string nombreDomicilio, numExterior, numInterior, calle, CP;
         public string Referencias;
 
         public Domicilios()
@@ -39,7 +39,7 @@ namespace CapaNegocio.CLASES
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             comando.Parameters.AddWithValue("@idMunicipio", idMunicipio);
             comando.Parameters.AddWithValue("@nombreDomicilio", nombreDomicilio);
-            comando.Parameters.AddWithValue("@numExtrior", numExtrior);
+            comando.Parameters.AddWithValue("@numExterior", numExterior);
             comando.Parameters.AddWithValue("@numInterior", @numInterior);
             comando.Parameters.AddWithValue("@calle", calle);
             comando.Parameters.AddWithValue("@CP", CP);
