@@ -112,7 +112,7 @@ namespace CapaCliente.FORMULARIOS
             // 1. Consulta SQL que UNE las columnas de nombre.
             //    Uso "AprllidoMa" para coincidir con tu imagen.
             string consultaSQL = @"
-        SELECT idCliente, Nombre + ' ' + ApellidoPa + ' ' + AprllidoMa AS NombreCompleto FROM dbo.catClientes ORDER BY NombreCompleto ASC; ";
+        SELECT idCliente, Nombre + ' ' + ApellidoPa + ' ' + ApellidoMa AS NombreCompleto FROM dbo.catClientes ORDER BY NombreCompleto ASC; ";
 
             // 2. Prepara el DataTable
             DataTable dt = new DataTable();

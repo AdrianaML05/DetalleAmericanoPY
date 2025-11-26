@@ -36,24 +36,26 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DGVENTA = new System.Windows.Forms.DataGridView();
+            this.CBEMPLAEADOS = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVENTA)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -76,6 +78,7 @@
             this.TXTFILTRO.Name = "TXTFILTRO";
             this.TXTFILTRO.Size = new System.Drawing.Size(868, 49);
             this.TXTFILTRO.TabIndex = 1;
+            this.TXTFILTRO.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTFILTRO_KeyPress);
             // 
             // button9
             // 
@@ -144,6 +147,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(930, 150);
             this.panel1.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(630, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 46);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "AGREGAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
@@ -244,29 +258,6 @@
             this.panel3.Size = new System.Drawing.Size(1130, 60);
             this.panel3.TabIndex = 26;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 179);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(907, 531);
-            this.dataGridView1.TabIndex = 32;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(759, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 46);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "AGREGAR";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -274,18 +265,31 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 41);
+            this.label2.Size = new System.Drawing.Size(171, 40);
             this.label2.TabIndex = 0;
             this.label2.Text = "CODIGO:";
             // 
-            // comboBox1
+            // DGVENTA
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(236, 31);
-            this.comboBox1.TabIndex = 2;
+            this.DGVENTA.AllowUserToAddRows = false;
+            this.DGVENTA.AllowUserToDeleteRows = false;
+            this.DGVENTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVENTA.Location = new System.Drawing.Point(9, 179);
+            this.DGVENTA.Name = "DGVENTA";
+            this.DGVENTA.ReadOnly = true;
+            this.DGVENTA.RowHeadersWidth = 51;
+            this.DGVENTA.RowTemplate.Height = 24;
+            this.DGVENTA.Size = new System.Drawing.Size(787, 514);
+            this.DGVENTA.TabIndex = 32;
+            // 
+            // CBEMPLAEADOS
+            // 
+            this.CBEMPLAEADOS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBEMPLAEADOS.FormattingEnabled = true;
+            this.CBEMPLAEADOS.Location = new System.Drawing.Point(200, 126);
+            this.CBEMPLAEADOS.Name = "CBEMPLAEADOS";
+            this.CBEMPLAEADOS.Size = new System.Drawing.Size(281, 31);
+            this.CBEMPLAEADOS.TabIndex = 2;
             // 
             // label3
             // 
@@ -298,21 +302,45 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "EMPLEADO:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Clarendon BT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(498, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 27);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "CANTIDAD:";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(665, 125);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 30);
+            this.txtCantidad.TabIndex = 34;
+            // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 911);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.CBEMPLAEADOS);
+            this.Controls.Add(this.DGVENTA);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVenta";
             this.Text = "frmVenta";
+            this.Load += new System.EventHandler(this.frmVenta_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -322,7 +350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVENTA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,9 +372,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVENTA;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBEMPLAEADOS;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }
