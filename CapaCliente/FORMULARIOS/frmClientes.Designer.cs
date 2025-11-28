@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.TXTID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.TXTTIPOCLIENTE = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TXTAPELLIDOMATERNO = new System.Windows.Forms.TextBox();
@@ -47,14 +48,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TXTID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BNTELIMINAR = new System.Windows.Forms.Button();
+            this.BTNGUARDAR = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BTNBUSCAR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -86,18 +86,26 @@
             this.panel1.Size = new System.Drawing.Size(1115, 634);
             this.panel1.TabIndex = 151;
             // 
-            // label4
+            // TXTID
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label4.Location = new System.Drawing.Point(663, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 36);
-            this.label4.TabIndex = 167;
-            this.label4.Text = "CLIENTES";
+            this.TXTID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TXTID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXTID.Location = new System.Drawing.Point(94, 136);
+            this.TXTID.Multiline = true;
+            this.TXTID.Name = "TXTID";
+            this.TXTID.Size = new System.Drawing.Size(326, 34);
+            this.TXTID.TabIndex = 167;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.label7.Location = new System.Drawing.Point(89, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 27);
+            this.label7.TabIndex = 168;
+            this.label7.Text = "ID :";
             // 
             // TXTTIPOCLIENTE
             // 
@@ -268,34 +276,26 @@
             this.label1.TabIndex = 159;
             this.label1.Text = "APELLIDO PATERNO:";
             // 
-            // TXTID
+            // label4
             // 
-            this.TXTID.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TXTID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTID.Location = new System.Drawing.Point(94, 136);
-            this.TXTID.Multiline = true;
-            this.TXTID.Name = "TXTID";
-            this.TXTID.Size = new System.Drawing.Size(326, 34);
-            this.TXTID.TabIndex = 167;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label7.Location = new System.Drawing.Point(89, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 27);
-            this.label7.TabIndex = 168;
-            this.label7.Text = "ID :";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.label4.Location = new System.Drawing.Point(663, 28);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 36);
+            this.label4.TabIndex = 167;
+            this.label4.Text = "CLIENTES";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.BNTELIMINAR);
+            this.panel2.Controls.Add(this.BTNGUARDAR);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.BTNBUSCAR);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -325,51 +325,53 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button4
+            // BNTELIMINAR
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button4.Image = global::CapaCliente.Properties.Resources.papelera_de_reciclaje;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(0, 300);
-            this.button4.Margin = new System.Windows.Forms.Padding(7);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(193, 100);
-            this.button4.TabIndex = 173;
-            this.button4.Text = "ELIMINAR";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.BNTELIMINAR.BackColor = System.Drawing.Color.Transparent;
+            this.BNTELIMINAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BNTELIMINAR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BNTELIMINAR.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BNTELIMINAR.FlatAppearance.BorderSize = 0;
+            this.BNTELIMINAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.BNTELIMINAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.BNTELIMINAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BNTELIMINAR.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BNTELIMINAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.BNTELIMINAR.Image = global::CapaCliente.Properties.Resources.papelera_de_reciclaje;
+            this.BNTELIMINAR.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BNTELIMINAR.Location = new System.Drawing.Point(0, 300);
+            this.BNTELIMINAR.Margin = new System.Windows.Forms.Padding(7);
+            this.BNTELIMINAR.Name = "BNTELIMINAR";
+            this.BNTELIMINAR.Size = new System.Drawing.Size(193, 100);
+            this.BNTELIMINAR.TabIndex = 173;
+            this.BNTELIMINAR.Text = "ELIMINAR";
+            this.BNTELIMINAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BNTELIMINAR.UseVisualStyleBackColor = false;
+            this.BNTELIMINAR.Click += new System.EventHandler(this.BNTELIMINAR_Click_1);
             // 
-            // button1
+            // BTNGUARDAR
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::CapaCliente.Properties.Resources.verificado;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(0, 200);
-            this.button1.Margin = new System.Windows.Forms.Padding(7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 100);
-            this.button1.TabIndex = 169;
-            this.button1.Text = "GUARDAR";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.BTNGUARDAR.BackColor = System.Drawing.Color.Transparent;
+            this.BTNGUARDAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNGUARDAR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTNGUARDAR.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BTNGUARDAR.FlatAppearance.BorderSize = 0;
+            this.BTNGUARDAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.BTNGUARDAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.BTNGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNGUARDAR.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNGUARDAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.BTNGUARDAR.Image = global::CapaCliente.Properties.Resources.verificado;
+            this.BTNGUARDAR.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BTNGUARDAR.Location = new System.Drawing.Point(0, 200);
+            this.BTNGUARDAR.Margin = new System.Windows.Forms.Padding(7);
+            this.BTNGUARDAR.Name = "BTNGUARDAR";
+            this.BTNGUARDAR.Size = new System.Drawing.Size(193, 100);
+            this.BTNGUARDAR.TabIndex = 169;
+            this.BTNGUARDAR.Text = "GUARDAR";
+            this.BTNGUARDAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BTNGUARDAR.UseVisualStyleBackColor = false;
+            this.BTNGUARDAR.Click += new System.EventHandler(this.BTNGUARDAR_Click_1);
             // 
             // button2
             // 
@@ -394,28 +396,29 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // BTNBUSCAR
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button3.Image = global::CapaCliente.Properties.Resources.lupa;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 100);
-            this.button3.TabIndex = 172;
-            this.button3.Text = "BUSCAR";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.BTNBUSCAR.BackColor = System.Drawing.Color.Transparent;
+            this.BTNBUSCAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNBUSCAR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTNBUSCAR.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BTNBUSCAR.FlatAppearance.BorderSize = 0;
+            this.BTNBUSCAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.BTNBUSCAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.BTNBUSCAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNBUSCAR.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNBUSCAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.BTNBUSCAR.Image = global::CapaCliente.Properties.Resources.lupa;
+            this.BTNBUSCAR.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BTNBUSCAR.Location = new System.Drawing.Point(0, 0);
+            this.BTNBUSCAR.Margin = new System.Windows.Forms.Padding(7);
+            this.BTNBUSCAR.Name = "BTNBUSCAR";
+            this.BTNBUSCAR.Size = new System.Drawing.Size(193, 100);
+            this.BTNBUSCAR.TabIndex = 172;
+            this.BTNBUSCAR.Text = "BUSCAR";
+            this.BTNBUSCAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BTNBUSCAR.UseVisualStyleBackColor = false;
+            this.BTNBUSCAR.Click += new System.EventHandler(this.BTNBUSCAR_Click_1);
             // 
             // frmClientes
             // 
@@ -460,10 +463,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTNGUARDAR;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BTNBUSCAR;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BNTELIMINAR;
     }
 }

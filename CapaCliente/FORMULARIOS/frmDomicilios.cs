@@ -184,6 +184,114 @@ namespace CapaCliente.FORMULARIOS
 
         private void gUARDARToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //// Validar primero
+            //if (!ValidarCampos())
+            //{
+            //    return; // Si hay errores, detener
+            //}
+
+            //// 1. Crea la instancia del objeto
+            //CapaNegocio.CLASES.Domicilios mun = new CapaNegocio.CLASES.Domicilios();
+
+          
+            //// 2. Asigna las propiedades desde tus TextBoxes y ComboBoxes
+            //mun.idDomicilio = int.Parse(TXTID.Text);
+            //mun.idCliente = Convert.ToInt32(CBCLIENTE.SelectedValue);
+            //mun.idMunicipio = Convert.ToInt32(CBMUNICIPIO.SelectedValue);
+            //mun.nombreDomicilio = TXTNOMBRE.Text.Trim(); // Este es el campo "NOMBRE"
+            //mun.numExterior = TXTNUMEXTERIOR.Text.Trim();
+            //mun.numInterior = TXTNUMINTERIOR.Text.Trim();
+            //mun.calle = TXTCALLE.Text.Trim();
+            //mun.CP = TXTCP.Text.Trim();
+            //mun.Referencias = TXTREFERENCIAS.Text.Trim();
+
+            //// 3. Obtiene los IDs de los ComboBoxes
+
+            //// ¡OJO! Tu tabla también tiene 'Referencias', necesitas agregarlo
+            //// Asumiendo que tienes un TextBox llamado 'TXTREFERENCIAS'
+
+            //// 4. Llama al método para guardar y muestra el resultado
+            //MessageBox.Show(mun.Guardar());
+
+            //// 5. Limpia los campos
+            //limpiar();
+        }
+
+        private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CapaCliente.BUSQUEDAS.BusquedaDomicilios x = new CapaCliente.BUSQUEDAS.BusquedaDomicilios();
+            //x.ShowDialog();
+            //if (x.DialogResult == DialogResult.OK)
+            //{
+            //    TXTID.Text = x.DgDomicilio.SelectedRows[0].Cells["idDomicilio"].Value.ToString();
+            //    TXTNOMBRE.Text = x.DgDomicilio.SelectedRows[0].Cells["Nombre_Del_Domicilio"].Value.ToString();
+            //    TXTNUMEXTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numExterior"].Value.ToString();
+            //    TXTNUMINTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numInterior"].Value.ToString();
+            //    string idCliente = x.DgDomicilio.SelectedRows[0].Cells["idCliente"].Value.ToString();
+            //    CBCLIENTE.SelectedValue = idCliente;
+            //    string idMunicipio = x.DgDomicilio.SelectedRows[0].Cells["idMunicipio"].Value.ToString();
+            //    CBMUNICIPIO.SelectedValue = idMunicipio;
+            //    TXTCALLE.Text = x.DgDomicilio.SelectedRows[0].Cells["Calle"].Value.ToString();
+            //    TXTCP.Text = x.DgDomicilio.SelectedRows[0].Cells["Codigo_Postal"].Value.ToString();
+            //    TXTREFERENCIAS.Text = x.DgDomicilio.SelectedRows[0].Cells["Referencias"].Value.ToString();
+                
+            //}
+        }
+
+        private void eLIMINARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CapaNegocio.CLASES.Clientes x = new CapaNegocio.CLASES.Clientes();
+            //x.idCliente = int.Parse(TXTID.Text);
+            //MessageBox.Show("Se elimino el registro.");
+            //if (encontro() == true)
+            //{
+            //    MessageBox.Show(x.Eliminar());
+            //    limpiar();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No se encontro el elemento a eliminar");
+            //}
+        }
+
+        private void lIMPIARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BTNBUSCAR_Click(object sender, EventArgs e)
+        {
+            CapaCliente.BUSQUEDAS.BusquedaDomicilios x = new CapaCliente.BUSQUEDAS.BusquedaDomicilios();
+            x.ShowDialog();
+            if (x.DialogResult == DialogResult.OK)
+            {
+                TXTID.Text = x.DgDomicilio.SelectedRows[0].Cells["idDomicilio"].Value.ToString();
+                TXTNOMBRE.Text = x.DgDomicilio.SelectedRows[0].Cells["Nombre_Del_Domicilio"].Value.ToString();
+                TXTNUMEXTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numExterior"].Value.ToString();
+                TXTNUMINTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numInterior"].Value.ToString();
+                string idCliente = x.DgDomicilio.SelectedRows[0].Cells["idCliente"].Value.ToString();
+                CBCLIENTE.SelectedValue = idCliente;
+                string idMunicipio = x.DgDomicilio.SelectedRows[0].Cells["idMunicipio"].Value.ToString();
+                CBMUNICIPIO.SelectedValue = idMunicipio;
+                TXTCALLE.Text = x.DgDomicilio.SelectedRows[0].Cells["Calle"].Value.ToString();
+                TXTCP.Text = x.DgDomicilio.SelectedRows[0].Cells["Codigo_Postal"].Value.ToString();
+                TXTREFERENCIAS.Text = x.DgDomicilio.SelectedRows[0].Cells["Referencias"].Value.ToString();
+
+            }
+        }
+
+        private void BTNLIMPIAR_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void BTNGUARDAR_Click(object sender, EventArgs e)
+        {
             // Validar primero
             if (!ValidarCampos())
             {
@@ -193,7 +301,7 @@ namespace CapaCliente.FORMULARIOS
             // 1. Crea la instancia del objeto
             CapaNegocio.CLASES.Domicilios mun = new CapaNegocio.CLASES.Domicilios();
 
-          
+
             // 2. Asigna las propiedades desde tus TextBoxes y ComboBoxes
             mun.idDomicilio = int.Parse(TXTID.Text);
             mun.idCliente = Convert.ToInt32(CBCLIENTE.SelectedValue);
@@ -217,28 +325,7 @@ namespace CapaCliente.FORMULARIOS
             limpiar();
         }
 
-        private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CapaCliente.BUSQUEDAS.BusquedaDomicilios x = new CapaCliente.BUSQUEDAS.BusquedaDomicilios();
-            x.ShowDialog();
-            if (x.DialogResult == DialogResult.OK)
-            {
-                TXTID.Text = x.DgDomicilio.SelectedRows[0].Cells["idDomicilio"].Value.ToString();
-                TXTNOMBRE.Text = x.DgDomicilio.SelectedRows[0].Cells["Nombre_Del_Domicilio"].Value.ToString();
-                TXTNUMEXTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numExterior"].Value.ToString();
-                TXTNUMINTERIOR.Text = x.DgDomicilio.SelectedRows[0].Cells["numInterior"].Value.ToString();
-                string idCliente = x.DgDomicilio.SelectedRows[0].Cells["idCliente"].Value.ToString();
-                CBCLIENTE.SelectedValue = idCliente;
-                string idMunicipio = x.DgDomicilio.SelectedRows[0].Cells["idMunicipio"].Value.ToString();
-                CBMUNICIPIO.SelectedValue = idMunicipio;
-                TXTCALLE.Text = x.DgDomicilio.SelectedRows[0].Cells["Calle"].Value.ToString();
-                TXTCP.Text = x.DgDomicilio.SelectedRows[0].Cells["Codigo_Postal"].Value.ToString();
-                TXTREFERENCIAS.Text = x.DgDomicilio.SelectedRows[0].Cells["Referencias"].Value.ToString();
-                
-            }
-        }
-
-        private void eLIMINARToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BTNELIMINAR_Click(object sender, EventArgs e)
         {
             CapaNegocio.CLASES.Clientes x = new CapaNegocio.CLASES.Clientes();
             x.idCliente = int.Parse(TXTID.Text);
@@ -252,16 +339,6 @@ namespace CapaCliente.FORMULARIOS
             {
                 MessageBox.Show("No se encontro el elemento a eliminar");
             }
-        }
-
-        private void lIMPIARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

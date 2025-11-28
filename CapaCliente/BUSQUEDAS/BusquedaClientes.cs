@@ -34,7 +34,7 @@ namespace CapaCliente.BUSQUEDAS
         {
             DataTable dt = new DataTable();
             con.Open();
-            SqlCommand cmd = new SqlCommand(@"SELECT idCliente, Nombre, ApellidoPa, AprllidoMa, CONCAT(Nombre, ' ', ApellidoPa, ' ', AprllidoMa) as NombreCompleto, NumeroTel, Correo, FechaNacimiento, numVicita, TipoCliente FROM catClientes", con);
+            SqlCommand cmd = new SqlCommand(@"SELECT idCliente, Nombre, ApellidoPa, ApellidoMa, CONCAT(Nombre, ' ', ApellidoPa, ' ', ApellidoMa) as NombreCompleto, NumeroTel, Correo, FechaNacimiento, numVisita, TipoCliente FROM catClientes", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             DgClientes.DataSource = dt;
@@ -43,7 +43,7 @@ namespace CapaCliente.BUSQUEDAS
             DgClientes.Columns["idCliente"].Visible = false;
             DgClientes.Columns["Nombre"].Visible = false;
             DgClientes.Columns["ApellidoPa"].Visible = false;
-            DgClientes.Columns["AprllidoMa"].Visible = false;
+            DgClientes.Columns["ApellidoMa"].Visible = false;
 
             con.Close();
         }

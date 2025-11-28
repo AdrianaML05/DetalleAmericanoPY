@@ -128,6 +128,95 @@ namespace CapaCliente.FORMULARIOS
 
         private void BTNGUARDAR_Click(object sender, EventArgs e)
         {
+            //// Validar primero
+            //if (!ValidarCampos())
+            //{
+            //    return; // Si hay errores, detener
+            //}
+
+            //CapaNegocio.CLASES.Clientes x = new CapaNegocio.CLASES.Clientes();
+            //x.idCliente = int.Parse(TXTID.Text);
+            //x.Nombre = TXTNOMBRE.Text.Trim();
+            //x.ApellidoPa = TXTAPELLIDOPATERNO.Text.Trim();
+            //x.ApellidoMa = TXTAPELLIDOMATERNO.Text.Trim();
+            //x.NumeroTel = TXTTELEFONO.Text.Trim();
+            //x.Correo = TXTCORREO.Text.Trim();
+            //x.FechaNacimiento = DTPFECHANACIMIENTO.Value.Date; // Para DateTimePicke
+            //x.numVisita = int.Parse(TXTVISITA.Text);
+            //x.TipoCliente = TXTTIPOCLIENTE.Text.Trim();
+
+            //MessageBox.Show(x.Guardar());
+            //limpiar();
+        }
+
+        private void BTNBUSCAR_Click(object sender, EventArgs e)
+        {
+            //No Utilizar Este Codigo
+            //CapaCliente.BUSQUEDAS.BusquedaClientes x = new CapaCliente.BUSQUEDAS.BusquedaClientes();
+            //x.ShowDialog();
+            //if (x.DialogResult == DialogResult.OK)
+            //{
+            //    TXTID.Text = x.DgClientes.SelectedRows[0].Cells["idCliente"].Value.ToString();
+            //    TXTNOMBRE.Text = x.DgClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+            //    TXTAPELLIDOPATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
+            //    TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
+            //    TXTTELEFONO.Text = x.DgClientes.SelectedRows[0].Cells["NumeroTel"].Value.ToString();
+            //    TXTCORREO.Text = x.DgClientes.SelectedRows[0].Cells["Correo"].Value.ToString();
+            //    DTPFECHANACIMIENTO.Text = x.DgClientes.SelectedRows[0].Cells["FechaNacimiento"].Value.ToString();
+            //    TXTVISITA.Text = x.DgClientes.SelectedRows[0].Cells["numVisita"].Value.ToString();
+            //    TXTTIPOCLIENTE.Text = x.DgClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
+            //}
+        }
+
+        private void BNTLIMPIAR_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void BNTELIMINAR_Click(object sender, EventArgs e)
+        {
+            //CapaNegocio.CLASES.Clientes x = new CapaNegocio.CLASES.Clientes();
+            //x.idCliente = int.Parse(TXTID.Text);
+            //MessageBox.Show("Se elimino el registro.");
+            //if (encontro() == true)
+            //{
+            //    MessageBox.Show(x.Eliminar());
+            //    limpiar();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No se encontro el elemento a eliminar");
+            //}
+        }
+
+        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea el carácter
+            }
+        }
+
+        private void BTNBUSCAR_Click_1(object sender, EventArgs e)
+        {
+            CapaCliente.BUSQUEDAS.BusquedaClientes x = new CapaCliente.BUSQUEDAS.BusquedaClientes();
+            x.ShowDialog();
+            if (x.DialogResult == DialogResult.OK)
+            {
+                TXTID.Text = x.DgClientes.SelectedRows[0].Cells["idCliente"].Value.ToString();
+                TXTNOMBRE.Text = x.DgClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                TXTAPELLIDOPATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
+                TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
+                TXTTELEFONO.Text = x.DgClientes.SelectedRows[0].Cells["NumeroTel"].Value.ToString();
+                TXTCORREO.Text = x.DgClientes.SelectedRows[0].Cells["Correo"].Value.ToString();
+                DTPFECHANACIMIENTO.Text = x.DgClientes.SelectedRows[0].Cells["FechaNacimiento"].Value.ToString();
+                TXTVISITA.Text = x.DgClientes.SelectedRows[0].Cells["numVisita"].Value.ToString();
+                TXTTIPOCLIENTE.Text = x.DgClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
+            }
+        }
+
+        private void BTNGUARDAR_Click_1(object sender, EventArgs e)
+        {
             // Validar primero
             if (!ValidarCampos())
             {
@@ -149,30 +238,7 @@ namespace CapaCliente.FORMULARIOS
             limpiar();
         }
 
-        private void BTNBUSCAR_Click(object sender, EventArgs e)
-        {
-            CapaCliente.BUSQUEDAS.BusquedaClientes x = new CapaCliente.BUSQUEDAS.BusquedaClientes();
-            x.ShowDialog();
-            if (x.DialogResult == DialogResult.OK)
-            {
-                TXTID.Text = x.DgClientes.SelectedRows[0].Cells["idCliente"].Value.ToString();
-                TXTNOMBRE.Text = x.DgClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                TXTAPELLIDOPATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
-                TXTAPELLIDOMATERNO.Text = x.DgClientes.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
-                TXTTELEFONO.Text = x.DgClientes.SelectedRows[0].Cells["NumeroTel"].Value.ToString();
-                TXTCORREO.Text = x.DgClientes.SelectedRows[0].Cells["Correo"].Value.ToString();
-                DTPFECHANACIMIENTO.Text = x.DgClientes.SelectedRows[0].Cells["FechaNacimiento"].Value.ToString();
-                TXTVISITA.Text = x.DgClientes.SelectedRows[0].Cells["numVisita"].Value.ToString();
-                TXTTIPOCLIENTE.Text = x.DgClientes.SelectedRows[0].Cells["TipoCliente"].Value.ToString();
-            }
-        }
-
-        private void BNTLIMPIAR_Click(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void BNTELIMINAR_Click(object sender, EventArgs e)
+        private void BNTELIMINAR_Click_1(object sender, EventArgs e)
         {
             CapaNegocio.CLASES.Clientes x = new CapaNegocio.CLASES.Clientes();
             x.idCliente = int.Parse(TXTID.Text);
@@ -186,14 +252,7 @@ namespace CapaCliente.FORMULARIOS
             {
                 MessageBox.Show("No se encontro el elemento a eliminar");
             }
-        }
 
-        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Bloquea el carácter
-            }
         }
     }
 }

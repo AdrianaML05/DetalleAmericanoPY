@@ -37,7 +37,7 @@ namespace CapaNegocio.CLASES
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@ApellidoPa", ApellidoPa);
-            comando.Parameters.AddWithValue("@AprllidoMa", ApellidoMa);
+            comando.Parameters.AddWithValue("@ApellidoMa", ApellidoMa);
             comando.Parameters.AddWithValue("@NumeroTel", NumeroTel);
             comando.Parameters.AddWithValue("@Correo", Correo);
             comando.Parameters.AddWithValue("@FechaNacimiento", FechaNacimiento);
