@@ -21,5 +21,10 @@ namespace CapaCliente.FORMULARIOS
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

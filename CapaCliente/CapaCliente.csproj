@@ -392,5 +392,23 @@
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disco-flexible1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpiar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verificado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papelera-de-reciclaje.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace CapaCliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar {
+            get {
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bolsa_de_la_compra {
             get {
                 object obj = ResourceManager.GetObject("bolsa-de-la-compra", resourceCulture);
@@ -86,6 +96,16 @@ namespace CapaCliente.Properties {
         internal static System.Drawing.Bitmap disco_flexible {
             get {
                 object obj = ResourceManager.GetObject("disco-flexible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disco_flexible1 {
+            get {
+                object obj = ResourceManager.GetObject("disco-flexible1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,26 @@ namespace CapaCliente.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap limpiar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("limpiar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lupa {
+            get {
+                object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lupa__1_ {
             get {
                 object obj = ResourceManager.GetObject("lupa (1)", resourceCulture);
@@ -176,6 +216,16 @@ namespace CapaCliente.Properties {
         internal static System.Drawing.Bitmap mapa {
             get {
                 object obj = ResourceManager.GetObject("mapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap papelera_de_reciclaje {
+            get {
+                object obj = ResourceManager.GetObject("papelera-de-reciclaje", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +296,16 @@ namespace CapaCliente.Properties {
         internal static System.Drawing.Bitmap transferencia_movil {
             get {
                 object obj = ResourceManager.GetObject("transferencia-movil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verificado {
+            get {
+                object obj = ResourceManager.GetObject("verificado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

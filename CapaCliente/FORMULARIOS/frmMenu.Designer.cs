@@ -30,33 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.REGRESAR = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Abrirform = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.RCOMPRA = new System.Windows.Forms.Button();
+            this.RVENTA = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.COMPRA = new System.Windows.Forms.Button();
+            this.PROVEEDORES = new System.Windows.Forms.Button();
+            this.INVENTARIO = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.PRODUCTOS = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.COMPRA = new System.Windows.Forms.Button();
-            this.PROVEEDORES = new System.Windows.Forms.Button();
-            this.INVENTARIO = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.RCOMPRA = new System.Windows.Forms.Button();
-            this.RVENTA = new System.Windows.Forms.Button();
-            this.Abrirform = new System.Windows.Forms.Panel();
+            this.REGRESAR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,38 +62,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 925);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1924, 130);
+            this.panel1.Size = new System.Drawing.Size(1274, 130);
             this.panel1.TabIndex = 49;
-            // 
-            // REGRESAR
-            // 
-            this.REGRESAR.BackColor = System.Drawing.Color.Transparent;
-            this.REGRESAR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.REGRESAR.Dock = System.Windows.Forms.DockStyle.Right;
-            this.REGRESAR.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.REGRESAR.FlatAppearance.BorderSize = 0;
-            this.REGRESAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.REGRESAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.REGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.REGRESAR.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.REGRESAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.REGRESAR.Image = global::CapaCliente.Properties.Resources.cerrar_sesion;
-            this.REGRESAR.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.REGRESAR.Location = new System.Drawing.Point(1699, 0);
-            this.REGRESAR.Name = "REGRESAR";
-            this.REGRESAR.Size = new System.Drawing.Size(225, 130);
-            this.REGRESAR.TabIndex = 16;
-            this.REGRESAR.Text = "CERRAR SESION";
-            this.REGRESAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.REGRESAR.UseVisualStyleBackColor = false;
-            this.REGRESAR.Click += new System.EventHandler(this.REGRESAR_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.PRODUCTOS);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -105,6 +81,281 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(219, 925);
             this.panel2.TabIndex = 55;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            this.panel3.Controls.Add(this.RCOMPRA);
+            this.panel3.Controls.Add(this.button9);
+            this.panel3.Controls.Add(this.RVENTA);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.INVENTARIO);
+            this.panel3.Controls.Add(this.COMPRA);
+            this.panel3.Controls.Add(this.PROVEEDORES);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(219, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(208, 925);
+            this.panel3.TabIndex = 56;
+            // 
+            // Abrirform
+            // 
+            this.Abrirform.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Abrirform.Location = new System.Drawing.Point(427, 0);
+            this.Abrirform.Name = "Abrirform";
+            this.Abrirform.Size = new System.Drawing.Size(847, 925);
+            this.Abrirform.TabIndex = 59;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.Location = new System.Drawing.Point(0, 696);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(208, 116);
+            this.button9.TabIndex = 11;
+            this.button9.Text = "REPORTE DE PEDIDO";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // RCOMPRA
+            // 
+            this.RCOMPRA.BackColor = System.Drawing.Color.Transparent;
+            this.RCOMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RCOMPRA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RCOMPRA.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RCOMPRA.FlatAppearance.BorderSize = 0;
+            this.RCOMPRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RCOMPRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.RCOMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RCOMPRA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RCOMPRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.RCOMPRA.Image = ((System.Drawing.Image)(resources.GetObject("RCOMPRA.Image")));
+            this.RCOMPRA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.RCOMPRA.Location = new System.Drawing.Point(0, 812);
+            this.RCOMPRA.Name = "RCOMPRA";
+            this.RCOMPRA.Size = new System.Drawing.Size(208, 108);
+            this.RCOMPRA.TabIndex = 8;
+            this.RCOMPRA.Text = "REPORTE DE COMPRAS";
+            this.RCOMPRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RCOMPRA.UseVisualStyleBackColor = false;
+            // 
+            // RVENTA
+            // 
+            this.RVENTA.BackColor = System.Drawing.Color.Transparent;
+            this.RVENTA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RVENTA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RVENTA.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RVENTA.FlatAppearance.BorderSize = 0;
+            this.RVENTA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RVENTA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.RVENTA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RVENTA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RVENTA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.RVENTA.Image = ((System.Drawing.Image)(resources.GetObject("RVENTA.Image")));
+            this.RVENTA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.RVENTA.Location = new System.Drawing.Point(0, 580);
+            this.RVENTA.Name = "RVENTA";
+            this.RVENTA.Size = new System.Drawing.Size(208, 116);
+            this.RVENTA.TabIndex = 4;
+            this.RVENTA.Text = "REPORTE DE VENTA";
+            this.RVENTA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.RVENTA.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button6.Image = global::CapaCliente.Properties.Resources.entrega_urgente;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.Location = new System.Drawing.Point(0, 464);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(208, 116);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "ENVIOS";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // COMPRA
+            // 
+            this.COMPRA.BackColor = System.Drawing.Color.Transparent;
+            this.COMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.COMPRA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.COMPRA.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.COMPRA.FlatAppearance.BorderSize = 0;
+            this.COMPRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.COMPRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.COMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.COMPRA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.COMPRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.COMPRA.Image = ((System.Drawing.Image)(resources.GetObject("COMPRA.Image")));
+            this.COMPRA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.COMPRA.Location = new System.Drawing.Point(0, 116);
+            this.COMPRA.Name = "COMPRA";
+            this.COMPRA.Size = new System.Drawing.Size(208, 116);
+            this.COMPRA.TabIndex = 10;
+            this.COMPRA.Text = "COMPRA";
+            this.COMPRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.COMPRA.UseVisualStyleBackColor = false;
+            this.COMPRA.Click += new System.EventHandler(this.COMPRA_Click);
+            // 
+            // PROVEEDORES
+            // 
+            this.PROVEEDORES.BackColor = System.Drawing.Color.Transparent;
+            this.PROVEEDORES.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PROVEEDORES.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PROVEEDORES.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PROVEEDORES.FlatAppearance.BorderSize = 0;
+            this.PROVEEDORES.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.PROVEEDORES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.PROVEEDORES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PROVEEDORES.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PROVEEDORES.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.PROVEEDORES.Image = ((System.Drawing.Image)(resources.GetObject("PROVEEDORES.Image")));
+            this.PROVEEDORES.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PROVEEDORES.Location = new System.Drawing.Point(0, 0);
+            this.PROVEEDORES.Name = "PROVEEDORES";
+            this.PROVEEDORES.Size = new System.Drawing.Size(208, 116);
+            this.PROVEEDORES.TabIndex = 7;
+            this.PROVEEDORES.Text = "PROVEEDORES";
+            this.PROVEEDORES.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PROVEEDORES.UseVisualStyleBackColor = false;
+            this.PROVEEDORES.Click += new System.EventHandler(this.PROVEEDORES_Click);
+            // 
+            // INVENTARIO
+            // 
+            this.INVENTARIO.BackColor = System.Drawing.Color.Transparent;
+            this.INVENTARIO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.INVENTARIO.Dock = System.Windows.Forms.DockStyle.Top;
+            this.INVENTARIO.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.INVENTARIO.FlatAppearance.BorderSize = 0;
+            this.INVENTARIO.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.INVENTARIO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.INVENTARIO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.INVENTARIO.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVENTARIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.INVENTARIO.Image = ((System.Drawing.Image)(resources.GetObject("INVENTARIO.Image")));
+            this.INVENTARIO.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.INVENTARIO.Location = new System.Drawing.Point(0, 232);
+            this.INVENTARIO.Name = "INVENTARIO";
+            this.INVENTARIO.Size = new System.Drawing.Size(208, 116);
+            this.INVENTARIO.TabIndex = 3;
+            this.INVENTARIO.Text = "INVENTARIO";
+            this.INVENTARIO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.INVENTARIO.UseVisualStyleBackColor = false;
+            this.INVENTARIO.Click += new System.EventHandler(this.INVENTARIO_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button5.Image = global::CapaCliente.Properties.Resources.entrega_a_domicilio;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.Location = new System.Drawing.Point(0, 348);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(208, 116);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "DOMICILIOS";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button8.Image = global::CapaCliente.Properties.Resources.mapa;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.Location = new System.Drawing.Point(0, 577);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(219, 116);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "ESTADO";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button7.Image = global::CapaCliente.Properties.Resources.mapa;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.Location = new System.Drawing.Point(0, 693);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(219, 116);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "MUNICIPIO";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button3.Image = global::CapaCliente.Properties.Resources.las_compras_en_linea;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.Location = new System.Drawing.Point(0, 809);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(219, 116);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "PEDIDOS";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button10
             // 
@@ -221,310 +472,36 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel3
+            // REGRESAR
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(219, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 925);
-            this.panel3.TabIndex = 56;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button5.Image = global::CapaCliente.Properties.Resources.entrega_a_domicilio;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.Location = new System.Drawing.Point(0, 348);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(208, 116);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "DOMICILIOS";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button8.Image = global::CapaCliente.Properties.Resources.mapa;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.Location = new System.Drawing.Point(0, 232);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(208, 116);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "ESTADO";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button7.Image = global::CapaCliente.Properties.Resources.mapa;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.Location = new System.Drawing.Point(0, 116);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(208, 116);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "MUNICIPIO";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Image = global::CapaCliente.Properties.Resources.las_compras_en_linea;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(208, 116);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "PEDIDOS";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Controls.Add(this.COMPRA);
-            this.panel4.Controls.Add(this.PROVEEDORES);
-            this.panel4.Controls.Add(this.INVENTARIO);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(427, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(211, 925);
-            this.panel4.TabIndex = 57;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button6.Image = global::CapaCliente.Properties.Resources.entrega_urgente;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.Location = new System.Drawing.Point(0, 348);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 116);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "ENVIOS";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // COMPRA
-            // 
-            this.COMPRA.BackColor = System.Drawing.Color.Transparent;
-            this.COMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.COMPRA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.COMPRA.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.COMPRA.FlatAppearance.BorderSize = 0;
-            this.COMPRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.COMPRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.COMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.COMPRA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.COMPRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.COMPRA.Image = ((System.Drawing.Image)(resources.GetObject("COMPRA.Image")));
-            this.COMPRA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.COMPRA.Location = new System.Drawing.Point(0, 232);
-            this.COMPRA.Name = "COMPRA";
-            this.COMPRA.Size = new System.Drawing.Size(211, 116);
-            this.COMPRA.TabIndex = 10;
-            this.COMPRA.Text = "COMPRA";
-            this.COMPRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.COMPRA.UseVisualStyleBackColor = false;
-            this.COMPRA.Click += new System.EventHandler(this.COMPRA_Click);
-            // 
-            // PROVEEDORES
-            // 
-            this.PROVEEDORES.BackColor = System.Drawing.Color.Transparent;
-            this.PROVEEDORES.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PROVEEDORES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PROVEEDORES.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PROVEEDORES.FlatAppearance.BorderSize = 0;
-            this.PROVEEDORES.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.PROVEEDORES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.PROVEEDORES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PROVEEDORES.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PROVEEDORES.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.PROVEEDORES.Image = ((System.Drawing.Image)(resources.GetObject("PROVEEDORES.Image")));
-            this.PROVEEDORES.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.PROVEEDORES.Location = new System.Drawing.Point(0, 116);
-            this.PROVEEDORES.Name = "PROVEEDORES";
-            this.PROVEEDORES.Size = new System.Drawing.Size(211, 116);
-            this.PROVEEDORES.TabIndex = 7;
-            this.PROVEEDORES.Text = "PROVEEDORES";
-            this.PROVEEDORES.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.PROVEEDORES.UseVisualStyleBackColor = false;
-            this.PROVEEDORES.Click += new System.EventHandler(this.PROVEEDORES_Click);
-            // 
-            // INVENTARIO
-            // 
-            this.INVENTARIO.BackColor = System.Drawing.Color.Transparent;
-            this.INVENTARIO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.INVENTARIO.Dock = System.Windows.Forms.DockStyle.Top;
-            this.INVENTARIO.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.INVENTARIO.FlatAppearance.BorderSize = 0;
-            this.INVENTARIO.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.INVENTARIO.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.INVENTARIO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.INVENTARIO.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INVENTARIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.INVENTARIO.Image = ((System.Drawing.Image)(resources.GetObject("INVENTARIO.Image")));
-            this.INVENTARIO.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.INVENTARIO.Location = new System.Drawing.Point(0, 0);
-            this.INVENTARIO.Name = "INVENTARIO";
-            this.INVENTARIO.Size = new System.Drawing.Size(211, 116);
-            this.INVENTARIO.TabIndex = 3;
-            this.INVENTARIO.Text = "INVENTARIO";
-            this.INVENTARIO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.INVENTARIO.UseVisualStyleBackColor = false;
-            this.INVENTARIO.Click += new System.EventHandler(this.INVENTARIO_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.panel5.Controls.Add(this.button9);
-            this.panel5.Controls.Add(this.RCOMPRA);
-            this.panel5.Controls.Add(this.RVENTA);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(638, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(230, 925);
-            this.panel5.TabIndex = 58;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.Location = new System.Drawing.Point(0, 232);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(230, 116);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "REPORTE DE PEDIDO";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // RCOMPRA
-            // 
-            this.RCOMPRA.BackColor = System.Drawing.Color.Transparent;
-            this.RCOMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RCOMPRA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RCOMPRA.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.RCOMPRA.FlatAppearance.BorderSize = 0;
-            this.RCOMPRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RCOMPRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.RCOMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RCOMPRA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RCOMPRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.RCOMPRA.Image = ((System.Drawing.Image)(resources.GetObject("RCOMPRA.Image")));
-            this.RCOMPRA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.RCOMPRA.Location = new System.Drawing.Point(0, 116);
-            this.RCOMPRA.Name = "RCOMPRA";
-            this.RCOMPRA.Size = new System.Drawing.Size(230, 116);
-            this.RCOMPRA.TabIndex = 8;
-            this.RCOMPRA.Text = "REPORTE DE COMPRAS";
-            this.RCOMPRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.RCOMPRA.UseVisualStyleBackColor = false;
-            // 
-            // RVENTA
-            // 
-            this.RVENTA.BackColor = System.Drawing.Color.Transparent;
-            this.RVENTA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RVENTA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RVENTA.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.RVENTA.FlatAppearance.BorderSize = 0;
-            this.RVENTA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RVENTA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.RVENTA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RVENTA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RVENTA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.RVENTA.Image = ((System.Drawing.Image)(resources.GetObject("RVENTA.Image")));
-            this.RVENTA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.RVENTA.Location = new System.Drawing.Point(0, 0);
-            this.RVENTA.Name = "RVENTA";
-            this.RVENTA.Size = new System.Drawing.Size(230, 116);
-            this.RVENTA.TabIndex = 4;
-            this.RVENTA.Text = "REPORTE DE VENTA";
-            this.RVENTA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.RVENTA.UseVisualStyleBackColor = false;
-            // 
-            // Abrirform
-            // 
-            this.Abrirform.Location = new System.Drawing.Point(910, 17);
-            this.Abrirform.Name = "Abrirform";
-            this.Abrirform.Size = new System.Drawing.Size(1002, 902);
-            this.Abrirform.TabIndex = 59;
+            this.REGRESAR.BackColor = System.Drawing.Color.Transparent;
+            this.REGRESAR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.REGRESAR.Dock = System.Windows.Forms.DockStyle.Right;
+            this.REGRESAR.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.REGRESAR.FlatAppearance.BorderSize = 0;
+            this.REGRESAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.REGRESAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.REGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.REGRESAR.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.REGRESAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.REGRESAR.Image = global::CapaCliente.Properties.Resources.cerrar_sesion;
+            this.REGRESAR.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.REGRESAR.Location = new System.Drawing.Point(1049, 0);
+            this.REGRESAR.Name = "REGRESAR";
+            this.REGRESAR.Size = new System.Drawing.Size(225, 130);
+            this.REGRESAR.TabIndex = 16;
+            this.REGRESAR.Text = "CERRAR SESION";
+            this.REGRESAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.REGRESAR.UseVisualStyleBackColor = false;
+            this.REGRESAR.Click += new System.EventHandler(this.REGRESAR_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1274, 1055);
             this.Controls.Add(this.Abrirform);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -535,8 +512,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,8 +537,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel Abrirform;
     }
