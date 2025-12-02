@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TXTID = new System.Windows.Forms.TextBox();
             this.TXTREFERENCIAS = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TXTNUMINTERIOR = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TXTNOMBRE = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TXTID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,6 +89,7 @@
             this.button9.Text = "REGRESAR";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // button4
             // 
@@ -203,6 +204,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 570);
             this.panel1.TabIndex = 177;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.label4.Location = new System.Drawing.Point(59, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 27);
+            this.label4.TabIndex = 179;
+            this.label4.Text = "ID :";
+            // 
+            // TXTID
+            // 
+            this.TXTID.Location = new System.Drawing.Point(64, 106);
+            this.TXTID.Multiline = true;
+            this.TXTID.Name = "TXTID";
+            this.TXTID.Size = new System.Drawing.Size(276, 36);
+            this.TXTID.TabIndex = 180;
             // 
             // TXTREFERENCIAS
             // 
@@ -324,25 +344,6 @@
             this.label2.Size = new System.Drawing.Size(132, 27);
             this.label2.TabIndex = 173;
             this.label2.Text = "NOMBRE :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label4.Location = new System.Drawing.Point(59, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 27);
-            this.label4.TabIndex = 179;
-            this.label4.Text = "ID :";
-            // 
-            // TXTID
-            // 
-            this.TXTID.Location = new System.Drawing.Point(64, 106);
-            this.TXTID.Multiline = true;
-            this.TXTID.Name = "TXTID";
-            this.TXTID.Size = new System.Drawing.Size(276, 36);
-            this.TXTID.TabIndex = 180;
             // 
             // label8
             // 

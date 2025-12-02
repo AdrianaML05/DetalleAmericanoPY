@@ -340,5 +340,10 @@ namespace CapaCliente.FORMULARIOS
                 MessageBox.Show("No se encontro el elemento a eliminar");
             }
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

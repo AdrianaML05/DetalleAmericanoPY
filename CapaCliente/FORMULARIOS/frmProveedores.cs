@@ -137,5 +137,10 @@ namespace CapaCliente.FORMULARIOS
                 e.Handled = true; // Bloquea el carácter
             }
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

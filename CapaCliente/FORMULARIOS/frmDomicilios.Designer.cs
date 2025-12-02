@@ -126,7 +126,7 @@
             // TXTNUMINTERIOR
             // 
             this.TXTNUMINTERIOR.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTNUMINTERIOR.Location = new System.Drawing.Point(291, 285);
+            this.TXTNUMINTERIOR.Location = new System.Drawing.Point(306, 285);
             this.TXTNUMINTERIOR.Multiline = true;
             this.TXTNUMINTERIOR.Name = "TXTNUMINTERIOR";
             this.TXTNUMINTERIOR.Size = new System.Drawing.Size(123, 34);
@@ -146,7 +146,7 @@
             // TXTNUMEXTERIOR
             // 
             this.TXTNUMEXTERIOR.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTNUMEXTERIOR.Location = new System.Drawing.Point(291, 230);
+            this.TXTNUMEXTERIOR.Location = new System.Drawing.Point(306, 230);
             this.TXTNUMEXTERIOR.Multiline = true;
             this.TXTNUMEXTERIOR.Name = "TXTNUMEXTERIOR";
             this.TXTNUMEXTERIOR.Size = new System.Drawing.Size(123, 34);
@@ -384,6 +384,7 @@
             this.button9.Text = "REGRESAR";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // panel2
             // 

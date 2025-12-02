@@ -31,40 +31,65 @@ namespace CapaNegocio.CLASES
         public string Guardar()
         {
             string mensaje = "";
-            comando.CommandType = CommandType.StoredProcedure; //Confirma que los datos se obtendran de un PA
-            comando.CommandText = "SP_catEmpleados"; //Nombre del PA
-            comando.Parameters.Clear(); //Limpia los parametros, por si queda alguno en cache
-            comando.Parameters.AddWithValue("@op", 1);
-            comando.Parameters.AddWithValue("@idEmpleados", idEmpleados);
-            comando.Parameters.AddWithValue("@Nombre", Nombre);
-            comando.Parameters.AddWithValue("@ApellidoPa", ApellidoPa);
-            comando.Parameters.AddWithValue("@ApellidoMa", ApellidoMa);
-            comando.Parameters.AddWithValue("@Telefono", Telefono);
-            comando.Parameters.AddWithValue("@Correo", Correo);
-            comando.Parameters.AddWithValue("@RFC", RFC);
-            comando.Parameters.AddWithValue("@CURP", CURP);
-            comando.Parameters.AddWithValue("@Puesto", Puesto);
-            con.Open(); //Abre conexion
-            comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta
-            mensaje = "Listo";
-            con.Close();
+
+            try
+            {
+                comando.CommandType = CommandType.StoredProcedure; //Confirma que los datos se obtendran de un PA
+                comando.CommandText = "SP_catEmpleados"; //Nombre del PA
+                comando.Parameters.Clear(); //Limpia los parametros, por si queda alguno en cache
+                comando.Parameters.AddWithValue("@op", 1);
+                comando.Parameters.AddWithValue("@idEmpleados", idEmpleados);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
+                comando.Parameters.AddWithValue("@ApellidoPa", ApellidoPa);
+                comando.Parameters.AddWithValue("@ApellidoMa", ApellidoMa);
+                comando.Parameters.AddWithValue("@Telefono", Telefono);
+                comando.Parameters.AddWithValue("@Correo", Correo);
+                comando.Parameters.AddWithValue("@RFC", RFC);
+                comando.Parameters.AddWithValue("@CURP", CURP);
+                comando.Parameters.AddWithValue("@Puesto", Puesto);
+                con.Open(); //Abre conexion
+                comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta
+                mensaje = "Se Guardo el Registro Exitosamente";
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error al guardar el registro: " + ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
             return mensaje;
 
+
         }
-        public string Eliminar()
+        public void Eliminar()
         {
-            string mensaje = "";
-            comando.CommandType = CommandType.StoredProcedure; //Confirma que los datos se obtendran de un PA
-            comando.CommandText = "SP_catEmpleados"; //Nombre del PA
-            comando.Parameters.Clear(); //Limpia los parametros, por si queda alguno en cache
-            comando.Parameters.AddWithValue("@op", 3);
-            comando.Parameters.AddWithValue("@idEmpleados", idEmpleados);
-            con.Open(); //Abre conexion
-            comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta
-            mensaje = "CAMPO ELIMINADO";
-            
-            con.Close();
-            return mensaje;
+
+            try
+            {
+                comando.CommandType = CommandType.StoredProcedure; //Confirma que los datos se obtendran de un PA
+                comando.CommandText = "SP_catEmpleados"; //Nombre del PA
+                comando.Parameters.Clear(); //Limpia los parametros, por si queda alguno en cache
+                comando.Parameters.AddWithValue("@op", 3);
+                comando.Parameters.AddWithValue("@idEmpleados", idEmpleados);
+
+                con.Open(); //Abre conexion
+                comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta
+                //mensaje = "CAMPO ELIMINADO";
+
+            }
+            catch (Exception)
+            {
+                
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+
         }
         
 

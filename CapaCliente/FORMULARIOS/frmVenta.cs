@@ -72,6 +72,7 @@ namespace CapaCliente.FORMULARIOS
         private void frmVenta_Load(object sender, EventArgs e)
         {
            confdg();
+            
         }
 
         private void TXTFILTRO_KeyPress(object sender, KeyPressEventArgs e)
@@ -93,9 +94,20 @@ namespace CapaCliente.FORMULARIOS
             dt.Columns.Add("Codigo de Barra");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Cantidad");
-            dt.Columns.Add("Precio Unitario");
-            dt.Columns.Add("Subtotal");
+            dt.Columns.Add("Precio Unitario", typeof(decimal));
+            dt.Columns.Add("Subtotal", typeof(decimal));
             DGVENTA.DataSource = dt;
+
+            // Formato modena para el precio unitario
+            DGVENTA.Columns["Precio Unitario"].DefaultCellStyle.Format = "$#,##0.00";
+            DGVENTA.Columns["Precio Unitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            // Formato de moneda para Subtota
+            DGVENTA.Columns["Subtotal"].DefaultCellStyle.Format = "$#,##0.00";
+            DGVENTA.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            DGVENTA.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
         //void agregar()
         //{
@@ -136,21 +148,23 @@ namespace CapaCliente.FORMULARIOS
                 //string idProducto = reader["idProducto"].ToString();
                 string Codigo = reader["Codigo"].ToString();
                 string Nombre = reader["Nombre"].ToString();
-                decimal prcio = Convert.ToDecimal(reader["PrecioVenta"].ToString()); // <--- ERROR AQUÍ
+                decimal precio = Convert.ToDecimal(reader["PrecioVenta"]);
                 int cantidad = string.IsNullOrEmpty(txtCantidad.Text)? 1 : Convert.ToInt32(txtCantidad.Text);
-                decimal subtotal = cantidad * prcio;
+                decimal subtotal = cantidad * precio;
 
                 DataRow fila = dt.NewRow();
                 //fila["ID Producto"] = idProducto;
                 fila["Codigo de Barra"] = reader["Codigo"].ToString();
                 fila["Nombre"] = Nombre;
                 fila["Cantidad"] = cantidad;
-                fila["Precio Unitario"] = reader["PrecioVenta"].ToString();
+                fila["Precio Unitario"] = precio;
                 fila["Subtotal"] = subtotal;
                 dt.Rows.Add(fila);
                 DGVENTA.DataSource = dt;
                 txtCantidad.Clear();
                 TXTFILTRO.Clear();
+
+                CalcularTotal();
             }
             else
             {
@@ -159,6 +173,33 @@ namespace CapaCliente.FORMULARIOS
             reader.Close();
             con.Close();
 
+        }
+        void CalcularTotal()
+        {
+            decimal total = 0;
+
+            // Si prefieres usar el índice de la columna (por ejemplo, columna 3)
+            foreach (DataGridViewRow row in DGVENTA.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["Subtotal"].Value != null)
+                {
+                    total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
+                }
+            }
+
+            txtTotal.Text = total.ToString("C2"); // Formato moneda
+            //txtTotal.Text = total.ToString("N2");
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarPorCodigoBarra();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmClientes x = new frmClientes();
+            x.ShowDialog();
         }
     }
 }

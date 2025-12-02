@@ -189,6 +189,11 @@ namespace CapaCliente.FORMULARIOS
         {
             limpiar();
         }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     
 }

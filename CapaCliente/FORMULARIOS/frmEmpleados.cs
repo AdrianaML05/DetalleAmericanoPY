@@ -39,8 +39,8 @@ namespace CapaCliente.FORMULARIOS
         public void limpiar()
         {
             TXTNOMBRE.Clear();
-            TXTAPELLIDOPATERNO.Clear();
             TXTAPELLIDOMATERNO.Clear();
+            TXTAPELLIDOPATERNO.Clear();
             TXTTELEFONO.Clear();
             TXTCORREO.Clear();
             TXTRFC.Clear();
@@ -49,9 +49,10 @@ namespace CapaCliente.FORMULARIOS
             CapaNegocio.CLASES.Herramientas h = new Herramientas();
             TXTID.Text = h.consecutivo("idEmpleados", "catEmpleados").ToString();
             TXTNOMBRE.Focus();
-            TXTAPELLIDOPATERNO.Focus();
             TXTAPELLIDOMATERNO.Focus();
+            TXTAPELLIDOPATERNO.Focus();
             TXTCORREO.Focus();
+            TXTTELEFONO.Focus();
             TXTRFC.Focus();
             TXTCURP.Focus();
             TXTPUESTO.Focus();
@@ -110,7 +111,95 @@ namespace CapaCliente.FORMULARIOS
             return true; // Todos los campos son válidos
         }
 
+        //===============================================
+        // Los siguientes botones no se usan ya que 
+        // Ubo un error y se crearon nuevos
+        //===============================================
         private void BTNGUARDAR_Click(object sender, EventArgs e)
+        {
+            //===============================================
+            //      No se usa este boton, se repite abajo
+            //===============================================
+        }
+
+        private void BTNBUSCAR_Click(object sender, EventArgs e)
+        {
+            //===============================================
+            //      No se usa este boton, se repite abajo
+            //===============================================
+        }
+
+        private void BTNLIMPIAR_Click(object sender, EventArgs e)
+        {
+            //===============================================
+            //      No se usa este boton, se repite abajo
+            //===============================================
+        }
+
+        private void BTNELIMINAR_Click(object sender, EventArgs e)
+        {
+            //===============================================
+            //      No se usa este boton, se repite abajo
+            //===============================================
+        }
+
+        private void TXTTELEFONO_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void TXTTELEFONO_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //==============================================
+            //  Bloquea los caracteres que no sean numeros
+            //==============================================
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        //===============================================
+        // Se repite porque se creo un nuevo boton buscar
+        //===============================================
+        private void BTNBUSCAR_Click_1(object sender, EventArgs e)
+        {
+            CapaCliente.BUSQUEDAS.BusquedaEmpleados x = new CapaCliente.BUSQUEDAS.BusquedaEmpleados();
+            x.ShowDialog();
+            if (x.DialogResult == DialogResult.OK)
+            {
+                TXTID.Text = x.DgEmpleados.SelectedRows[0].Cells["idEmpleados"].Value.ToString();
+                TXTNOMBRE.Text = x.DgEmpleados.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                TXTAPELLIDOPATERNO.Text = x.DgEmpleados.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
+                TXTAPELLIDOMATERNO.Text = x.DgEmpleados.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
+                TXTTELEFONO.Text = x.DgEmpleados.SelectedRows[0].Cells["Telefono"].Value.ToString();
+                TXTCORREO.Text = x.DgEmpleados.SelectedRows[0].Cells["Correo"].Value.ToString();
+                TXTRFC.Text = x.DgEmpleados.SelectedRows[0].Cells["RFC"].Value.ToString();
+                TXTCURP.Text = x.DgEmpleados.SelectedRows[0].Cells["CURP"].Value.ToString();
+                TXTPUESTO.Text = x.DgEmpleados.SelectedRows[0].Cells["Puesto"].Value.ToString();
+
+            }
+
+        }
+
+        //===================================================
+        //  Se repite porque se creo un nuevo boton limpiar
+        //====================================================
+        private void BTNLIMPIAR_Click_1(object sender, EventArgs e)
+        {
+            limpiar();  
+        }
+
+        //===================================================
+        //  Se repite porque se creo un nuevo boton Guardar
+        //====================================================
+        private void BTNGUARDAR_Click_1(object sender, EventArgs e)
         {
             // Validar primero
             if (!ValidarCampos())
@@ -131,41 +220,21 @@ namespace CapaCliente.FORMULARIOS
 
             MessageBox.Show(x.Guardar());
             limpiar();
-
         }
 
-        private void BTNBUSCAR_Click(object sender, EventArgs e)
-        {
-            CapaCliente.BUSQUEDAS.BusquedaEmpleados x = new CapaCliente.BUSQUEDAS.BusquedaEmpleados();
-            x.ShowDialog();
-            if (x.DialogResult == DialogResult.OK)
-            {
-                TXTID.Text = x.DgEmpleados.SelectedRows[0].Cells["idEmpleados"].Value.ToString();
-                TXTNOMBRE.Text = x.DgEmpleados.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                TXTAPELLIDOPATERNO.Text = x.DgEmpleados.SelectedRows[0].Cells["ApellidoPa"].Value.ToString();
-                TXTAPELLIDOMATERNO.Text = x.DgEmpleados.SelectedRows[0].Cells["ApellidoMa"].Value.ToString();
-                TXTTELEFONO.Text = x.DgEmpleados.SelectedRows[0].Cells["Telefono"].Value.ToString();
-                TXTCORREO.Text = x.DgEmpleados.SelectedRows[0].Cells["Correo"].Value.ToString();
-                TXTRFC.Text = x.DgEmpleados.SelectedRows[0].Cells["RFC"].Value.ToString();
-                TXTCURP.Text = x.DgEmpleados.SelectedRows[0].Cells["CURP"].Value.ToString();
-                TXTPUESTO.Text = x.DgEmpleados.SelectedRows[0].Cells["Puesto"].Value.ToString();
 
-            }
-        }
-
-        private void BTNLIMPIAR_Click(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void BTNELIMINAR_Click(object sender, EventArgs e)
+        //===================================================
+        //  Se repite porque se creo un nuevo boton Eliminar
+        //====================================================
+        private void BTNELIMINAR_Click_1(object sender, EventArgs e)
         {
             CapaNegocio.CLASES.Empleados x = new CapaNegocio.CLASES.Empleados();
             x.idEmpleados = int.Parse(TXTID.Text);
-            MessageBox.Show("Se elimino el registro.");
             if (encontro() == true)
             {
-                MessageBox.Show(x.Eliminar());
+                //MessageBox.Show(x.Eliminar());
+                x.Eliminar();
+                MessageBox.Show("Se elimino el registro.");
                 limpiar();
             }
             else
@@ -174,17 +243,9 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        private void TXTTELEFONO_TextChanged(object sender, EventArgs e)
+        private void button9_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void TXTTELEFONO_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Bloquea el carácter
-            }
+            this.Close();
         }
     }
 }
