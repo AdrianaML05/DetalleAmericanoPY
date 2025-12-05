@@ -19,7 +19,7 @@ namespace CapaCliente.BUSQUEDAS
         public BusquedaClientes()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
         }
 
         private void BusquedaClientes_Load(object sender, EventArgs e)

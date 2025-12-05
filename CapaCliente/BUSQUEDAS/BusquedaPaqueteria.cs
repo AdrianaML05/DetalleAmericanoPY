@@ -19,7 +19,7 @@ namespace CapaCliente.BUSQUEDAS
         public BusquedaPaqueteria()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
         }
 
         private void BusquedaPaqueteria_Load(object sender, EventArgs e)

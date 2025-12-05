@@ -19,7 +19,7 @@ namespace CapaCliente.FORMULARIOS
         public frmDomicilios()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
             CargarMunicipiosConEstado();
             CargarComboClientes();
 
@@ -88,7 +88,7 @@ namespace CapaCliente.FORMULARIOS
             DataTable dt = new DataTable();
 
             // 3. 'using' asegura que la conexión se cierre sola
-            using (SqlConnection con = new SqlConnection(x.conexion))
+            using (SqlConnection con = new SqlConnection(x.conexion()))
             {
                 // 4. El DataAdapter ejecuta la consulta
                 using (SqlDataAdapter da = new SqlDataAdapter(consultaSQL, con))
@@ -119,7 +119,7 @@ namespace CapaCliente.FORMULARIOS
 
             // 3. 'using' asegura que la conexión se cierre sola
             //    (Uso 'x.conexion' como en tu ejemplo anterior)
-            using (SqlConnection con = new SqlConnection(x.conexion))
+            using (SqlConnection con = new SqlConnection(x.conexion()))
             {
                 // 4. El DataAdapter ejecuta la consulta
                 using (SqlDataAdapter da = new SqlDataAdapter(consultaSQL, con))

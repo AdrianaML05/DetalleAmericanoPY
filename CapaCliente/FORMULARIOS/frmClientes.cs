@@ -19,7 +19,7 @@ namespace CapaCliente.FORMULARIOS
         public frmClientes()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
 
         }
 

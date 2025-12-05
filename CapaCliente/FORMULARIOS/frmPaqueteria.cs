@@ -19,7 +19,7 @@ namespace CapaCliente.FORMULARIOS
         public frmPaqueteria()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
         }
 
         private void button9_Click(object sender, EventArgs e)

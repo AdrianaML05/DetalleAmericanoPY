@@ -13,7 +13,7 @@ namespace CapaNegocio.CLASES
         SqlConnection con = new SqlConnection();
         public Herramientas()
         {
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
         }
         public int consecutivo(string campo, string tabla)
         {

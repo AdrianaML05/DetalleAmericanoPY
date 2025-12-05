@@ -14,7 +14,7 @@ namespace CapaNegocio.CLASES
     {
 
         static Conexion co = new Conexion();
-        SqlConnection con = new SqlConnection(co.conexion);
+        SqlConnection con = new SqlConnection(co.conexion());
         SqlCommand comando = new SqlCommand();
 
         // ====== CAMPOS MAESTRO ======
@@ -50,21 +50,22 @@ namespace CapaNegocio.CLASES
         {
             string mensaje = "";
 
-            using (SqlConnection con = new SqlConnection(co.conexion))
+            using (SqlConnection con = new SqlConnection(co.conexion()))
             using (SqlCommand cmd = new SqlCommand("SP_Venta", con))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Campos Para el Maestro
-                cmd.Parameters.AddWithValue("@op", 1);
+                cmd.Parameters.AddWithValue("@op", 2);
                 cmd.Parameters.AddWithValue("@idVenta",
                     venta.idVenta == 0 ? (object)DBNull.Value : venta.idVenta);
+                cmd.Parameters.AddWithValue("@Folio", venta.Folio);
+                cmd.Parameters.AddWithValue("@Fecha", venta.Fecha);
                 cmd.Parameters.AddWithValue("@idCliente", venta.idCliente);
                 cmd.Parameters.AddWithValue("@idEmpleados",
                     venta.idEmpleados == 0 ? (object)DBNull.Value : venta.idEmpleados);
                 cmd.Parameters.AddWithValue("@idFormaPago", venta.idFormaPago);
-                cmd.Parameters.AddWithValue("@Folio", venta.Folio);
-                cmd.Parameters.AddWithValue("@Fecha", venta.Fecha);
+                cmd.Parameters.AddWithValue("@Total", venta.Total);
 
                 // Campos Para el Tipo Tabla 
                 DataTable dtDetalles = new DataTable();
@@ -75,11 +76,12 @@ namespace CapaNegocio.CLASES
                 dtDetalles.Columns.Add("PrecioProducto", typeof(decimal));
                 dtDetalles.Columns.Add("subTotal", typeof(decimal));
 
+                int contador = 1;
                 // Se llena el Detalle
                 foreach (var d in venta.Detalles)
                 {
                     dtDetalles.Rows.Add(
-                        0,
+                        contador++,
                         0,
                         d.idProducto,
                         d.CantidadProducto,
@@ -89,28 +91,25 @@ namespace CapaNegocio.CLASES
                 }
 
                 // Enviar el Tipo Tabla al Procedimiento Almacenado
-                SqlParameter tvp = cmd.Parameters.AddWithValue("@Detalles", dtDetalles);
+                SqlParameter tvp = cmd.Parameters.AddWithValue("@detalles", dtDetalles);
                 tvp.SqlDbType = SqlDbType.Structured;
                 tvp.TypeName = "DetalleVenta";
 
                 con.Open();
 
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        mensaje = reader["Mensaje"].ToString();
-                        venta.idVenta = Convert.ToInt32(reader["idVenta"]);
-                    }
-                    else
-                    {
-                        mensaje = "Venta guardada correctamente";
-                    }
-                }
+                object result = cmd.ExecuteScalar();
 
+                if (result != null && result != DBNull.Value)
+                {
+                    venta.idVenta = Convert.ToInt32(result);
+                    mensaje = "Venta Guardada Correctamente";
+                }
+                else
+                {
+                    mensaje = "Error al Guardar la Venta";
+                }
                 con.Close();
             }
-
             return mensaje;
         }
 

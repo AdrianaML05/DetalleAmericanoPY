@@ -12,7 +12,7 @@ namespace CapaNegocio.CLASES
     public class Empleados
     {
         static Conexion co = new Conexion();
-        SqlConnection con = new SqlConnection(co.conexion); //Trae todo lo que el metodo conexion contiene, permite la conexion BDD.
+        SqlConnection con = new SqlConnection(co.conexion()); //Trae todo lo que el metodo conexion contiene, permite la conexion BDD.
         SqlCommand comando = new SqlCommand();
 
         public int idEmpleados;

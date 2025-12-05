@@ -19,7 +19,7 @@ namespace CapaCliente.FORMULARIOS
         public frmProductos()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
             CargarCategorias();
         }
 

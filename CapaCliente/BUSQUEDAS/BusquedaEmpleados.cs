@@ -19,7 +19,7 @@ namespace CapaCliente.BUSQUEDAS
         public BusquedaEmpleados()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
         }
 
         private void BusquedaEmpleados_Load(object sender, EventArgs e)

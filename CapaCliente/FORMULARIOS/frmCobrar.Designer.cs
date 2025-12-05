@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCambio = new System.Windows.Forms.TextBox();
+            this.txtPago = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMix = new System.Windows.Forms.Button();
+            this.btnEfectivo = new System.Windows.Forms.Button();
+            this.btnTarjeta = new System.Windows.Forms.Button();
+            this.btnTransferencia = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnFinVenta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtCambio
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox3.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.textBox3.Location = new System.Drawing.Point(183, 326);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(270, 33);
-            this.textBox3.TabIndex = 11;
+            this.txtCambio.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtCambio.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.txtCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtCambio.Location = new System.Drawing.Point(183, 326);
+            this.txtCambio.Multiline = true;
+            this.txtCambio.Name = "txtCambio";
+            this.txtCambio.Size = new System.Drawing.Size(270, 33);
+            this.txtCambio.TabIndex = 11;
             // 
-            // textBox2
+            // txtPago
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.textBox2.Location = new System.Drawing.Point(183, 214);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 33);
-            this.textBox2.TabIndex = 10;
+            this.txtPago.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtPago.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.txtPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtPago.Location = new System.Drawing.Point(183, 214);
+            this.txtPago.Multiline = true;
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(270, 33);
+            this.txtPago.TabIndex = 10;
+            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
             // 
             // label3
             // 
@@ -89,16 +91,16 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "PAGO:";
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.textBox1.Location = new System.Drawing.Point(183, 85);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 47);
-            this.textBox1.TabIndex = 7;
+            this.txtTotal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtTotal.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.txtTotal.Location = new System.Drawing.Point(183, 85);
+            this.txtTotal.Multiline = true;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(270, 47);
+            this.txtTotal.TabIndex = 7;
             // 
             // label1
             // 
@@ -114,111 +116,115 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.btnMix);
+            this.panel1.Controls.Add(this.btnEfectivo);
+            this.panel1.Controls.Add(this.btnTarjeta);
+            this.panel1.Controls.Add(this.btnTransferencia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 576);
+            this.panel1.Size = new System.Drawing.Size(217, 637);
             this.panel1.TabIndex = 114;
             // 
-            // button3
+            // btnMix
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button3.Image = global::CapaCliente.Properties.Resources.tarjeta_de_credito__1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(0, 438);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 146);
-            this.button3.TabIndex = 115;
-            this.button3.Text = "MIX";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnMix.BackColor = System.Drawing.Color.Transparent;
+            this.btnMix.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMix.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMix.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMix.FlatAppearance.BorderSize = 0;
+            this.btnMix.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnMix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnMix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMix.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btnMix.Image = global::CapaCliente.Properties.Resources.tarjeta_de_credito__1_;
+            this.btnMix.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMix.Location = new System.Drawing.Point(0, 438);
+            this.btnMix.Name = "btnMix";
+            this.btnMix.Size = new System.Drawing.Size(217, 146);
+            this.btnMix.TabIndex = 115;
+            this.btnMix.Text = "MIX";
+            this.btnMix.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMix.UseVisualStyleBackColor = false;
+            this.btnMix.Click += new System.EventHandler(this.btnMix_Click);
             // 
-            // button9
+            // btnEfectivo
             // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button9.Image = global::CapaCliente.Properties.Resources.transferencia_movil;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(217, 146);
-            this.button9.TabIndex = 111;
-            this.button9.Text = "TRANSFERENCIA";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnEfectivo.BackColor = System.Drawing.Color.Transparent;
+            this.btnEfectivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEfectivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEfectivo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEfectivo.FlatAppearance.BorderSize = 0;
+            this.btnEfectivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEfectivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEfectivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEfectivo.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btnEfectivo.Image = global::CapaCliente.Properties.Resources.flujo_de_efectivo;
+            this.btnEfectivo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEfectivo.Location = new System.Drawing.Point(0, 292);
+            this.btnEfectivo.Name = "btnEfectivo";
+            this.btnEfectivo.Size = new System.Drawing.Size(217, 146);
+            this.btnEfectivo.TabIndex = 112;
+            this.btnEfectivo.Text = "EFECTIVO";
+            this.btnEfectivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEfectivo.UseVisualStyleBackColor = false;
+            this.btnEfectivo.Click += new System.EventHandler(this.btnEfectivo_Click);
             // 
-            // button2
+            // btnTarjeta
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button2.Image = global::CapaCliente.Properties.Resources.tarjeta_de_credito;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(0, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 146);
-            this.button2.TabIndex = 113;
-            this.button2.Text = "TARJETA";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnTarjeta.BackColor = System.Drawing.Color.Transparent;
+            this.btnTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTarjeta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTarjeta.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTarjeta.FlatAppearance.BorderSize = 0;
+            this.btnTarjeta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTarjeta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTarjeta.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarjeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btnTarjeta.Image = global::CapaCliente.Properties.Resources.tarjeta_de_credito;
+            this.btnTarjeta.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTarjeta.Location = new System.Drawing.Point(0, 146);
+            this.btnTarjeta.Name = "btnTarjeta";
+            this.btnTarjeta.Size = new System.Drawing.Size(217, 146);
+            this.btnTarjeta.TabIndex = 113;
+            this.btnTarjeta.Text = "TARJETA";
+            this.btnTarjeta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTarjeta.UseVisualStyleBackColor = false;
+            this.btnTarjeta.Click += new System.EventHandler(this.btnTarjeta_Click);
             // 
-            // button1
+            // btnTransferencia
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::CapaCliente.Properties.Resources.flujo_de_efectivo;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(0, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 146);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "EFECTIVO";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTransferencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTransferencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTransferencia.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTransferencia.FlatAppearance.BorderSize = 0;
+            this.btnTransferencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTransferencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnTransferencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransferencia.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransferencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.btnTransferencia.Image = global::CapaCliente.Properties.Resources.transferencia_movil;
+            this.btnTransferencia.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTransferencia.Location = new System.Drawing.Point(0, 0);
+            this.btnTransferencia.Name = "btnTransferencia";
+            this.btnTransferencia.Size = new System.Drawing.Size(217, 146);
+            this.btnTransferencia.TabIndex = 111;
+            this.btnTransferencia.Text = "TRANSFERENCIA";
+            this.btnTransferencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTransferencia.UseVisualStyleBackColor = false;
+            this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtPago);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCambio);
+            this.panel2.Controls.Add(this.txtTotal);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(303, 101);
@@ -239,12 +245,24 @@
             this.label6.TabIndex = 174;
             this.label6.Text = "COBRO";
             // 
+            // btnFinVenta
+            // 
+            this.btnFinVenta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinVenta.Location = new System.Drawing.Point(524, 534);
+            this.btnFinVenta.Name = "btnFinVenta";
+            this.btnFinVenta.Size = new System.Drawing.Size(217, 50);
+            this.btnFinVenta.TabIndex = 175;
+            this.btnFinVenta.Text = "Concluir Venta";
+            this.btnFinVenta.UseVisualStyleBackColor = true;
+            this.btnFinVenta.Click += new System.EventHandler(this.btnFinVenta_Click);
+            // 
             // frmCobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(1057, 576);
+            this.ClientSize = new System.Drawing.Size(1057, 637);
+            this.Controls.Add(this.btnFinVenta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -261,18 +279,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCambio;
+        private System.Windows.Forms.TextBox txtPago;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTransferencia;
+        private System.Windows.Forms.Button btnEfectivo;
+        private System.Windows.Forms.Button btnTarjeta;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMix;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnFinVenta;
     }
 }

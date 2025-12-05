@@ -18,7 +18,7 @@ namespace CapaCliente.BUSQUEDAS
         public BusquedaProductos()
         {
             InitializeComponent();
-            con.ConnectionString = x.conexion;
+            con.ConnectionString = x.conexion();
 
         }
 
