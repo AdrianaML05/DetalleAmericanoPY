@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CapaCliente.BUSQUEDAS
 {
-    public partial class BusquedaProductos : Form
+    public partial class BusquedaProductos : FORMULARIOS.FormularioBase
     {
         CapaNegocio.CLASES.Conexion x = new CapaNegocio.CLASES.Conexion();
         SqlConnection con = new SqlConnection();
@@ -19,6 +19,8 @@ namespace CapaCliente.BUSQUEDAS
         {
             InitializeComponent();
             con.ConnectionString = x.conexion();
+            EstablecerTamanoMinimo(700, 500);
+            HabilitarMaximizar();
 
         }
 

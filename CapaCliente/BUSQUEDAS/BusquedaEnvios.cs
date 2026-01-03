@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace CapaCliente.BUSQUEDAS
 {
-    public partial class BusquedaEnvios : Form
+    public partial class BusquedaEnvios : FORMULARIOS.FormularioBase
     {
         public BusquedaEnvios()
         {
             InitializeComponent();
+            EstablecerTamanoMinimo(700, 500);
+            HabilitarMaximizar();
         }
     }
 }

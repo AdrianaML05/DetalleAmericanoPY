@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmCobrar : Form
+    public partial class frmCobrar : FormularioBase
     {
         static Conexion x = new Conexion();
         private decimal totalVenta;
@@ -36,6 +36,9 @@ namespace CapaCliente.FORMULARIOS
         public frmCobrar()
         {
             InitializeComponent();
+            InitializeComponent();
+            EstablecerTamanoMinimo(400, 300);
+            DeshabilitarRedimensionar();  // No permitir redimensionar
         }
 
         private void frmCobrar_Load(object sender, EventArgs e)
@@ -189,33 +192,7 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        //private DataTable CrearTablaDetalles()
-        //{
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("idVentaDetalle", typeof(int));
-        //    dt.Columns.Add("idVenta", typeof(int));
-        //    dt.Columns.Add("idProducto", typeof(int));
-        //    dt.Columns.Add("CantidadProducto", typeof(int));
-        //    dt.Columns.Add("PrecioProducto", typeof(decimal));
-        //    dt.Columns.Add("subTotal", typeof(decimal));
-
-        //    int contador = 1;
-        //    foreach (DataRow row in detalleVneta.Rows)
-        //    {
-        //        DataRow newRow = dt.NewRow();
-        //        newRow["idVentaDetalle"] = contador++;
-        //        newRow["idVenta"] = 0;
-
-        //        string codigoBarra = row["Codigo de Barra"].ToString();
-        //        newRow["idProducto"] = ObtenerIdProducto(codigoBarra);
-
-        //        newRow["CantidadProducto"] = Convert.ToInt32(row["Cantidad"]);
-        //        newRow["PrecioProducto"] = Convert.ToDecimal(row["Precio Unitario"]);
-        //        newRow["subTotal"] = Convert.ToDecimal(row["Subtotal"]);
-        //        dt.Rows.Add(newRow);
-        //    }
-        //    return dt;
-        //}
+        
         private int ObtenerIdProducto(string codigoBarra)
         {
             using (SqlConnection con = new SqlConnection(x.conexion()))

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaCliente.BUSQUEDAS
 {
-    public partial class BusquedaPaqueteria : Form
+    public partial class BusquedaPaqueteria : FORMULARIOS.FormularioBase
     {
         CapaNegocio.CLASES.Conexion x = new CapaNegocio.CLASES.Conexion();
         SqlConnection con = new SqlConnection();
@@ -20,6 +20,8 @@ namespace CapaCliente.BUSQUEDAS
         {
             InitializeComponent();
             con.ConnectionString = x.conexion();
+            EstablecerTamanoMinimo(700, 500);
+            HabilitarMaximizar();
         }
 
         private void BusquedaPaqueteria_Load(object sender, EventArgs e)

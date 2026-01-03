@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,12 +77,15 @@ namespace CapaNegocio.CLASES
                 dtDetalles.Columns.Add("PrecioProducto", typeof(decimal));
                 dtDetalles.Columns.Add("subTotal", typeof(decimal));
 
-                int contador = 1;
+                Herramientas h = new Herramientas();
+                int siguinteId = h.consecutivo("idVentaDetalle", "VentaDetalle");
+
+                
                 // Se llena el Detalle
                 foreach (var d in venta.Detalles)
                 {
                     dtDetalles.Rows.Add(
-                        contador++,
+                        siguinteId++,
                         0,
                         d.idProducto,
                         d.CantidadProducto,
@@ -113,19 +117,57 @@ namespace CapaNegocio.CLASES
             return mensaje;
         }
 
-        public string Eliminar()
+        public string Cancelar(int idVenta, string motivo, int usuarioCancelo)
         {
             string mensaje = "";
-            comando.CommandType = CommandType.StoredProcedure; //Confirma que los datos se obtendran de un PA
-            comando.CommandText = "SP_Venta"; //Nombre del PA
-            comando.Parameters.Clear(); //Limpia los parametros, por si queda alguno en cache
-            comando.Parameters.AddWithValue("@op", 3);
-            comando.Parameters.AddWithValue("@idVenta", idVenta);
-            con.Open(); //Abre conexion
-            comando.ExecuteNonQuery(); //Ejecuta cuando no es una consulta
-            mensaje = "CAMPO ELIMINADO";
 
-            con.Close();
+            using (SqlConnection con = new SqlConnection(co.conexion()))
+            using (SqlCommand cmd = new SqlCommand("SP_Venta", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@op", 3);
+                cmd.Parameters.AddWithValue("@idVenta", idVenta);
+                cmd.Parameters.AddWithValue("@motivoCancelacion", motivo);
+                cmd.Parameters.AddWithValue("@usuarioCancelo", usuarioCancelo);
+
+                cmd.Parameters.AddWithValue("@Folio", DBNull.Value);
+                cmd.Parameters.AddWithValue("@Fecha", DBNull.Value);
+                cmd.Parameters.AddWithValue("@idCliente", DBNull.Value);
+                cmd.Parameters.AddWithValue("@idEmpleados", DBNull.Value);
+                cmd.Parameters.AddWithValue("@idFormaPago", DBNull.Value);
+                cmd.Parameters.AddWithValue("@Total", DBNull.Value);
+
+                //Tipo Tabla Vacío
+                DataTable dtVacio = new DataTable();
+                dtVacio.Columns.Add("idVentaDetalle", typeof(int));
+                dtVacio.Columns.Add("idVenta", typeof(int));
+                dtVacio.Columns.Add("idProducto", typeof(int));
+                dtVacio.Columns.Add("CantidadProducto", typeof(int));
+                dtVacio.Columns.Add("PrecioProducto", typeof(decimal));
+                dtVacio.Columns.Add("subTotal", typeof(decimal));
+
+                SqlParameter tvp = cmd.Parameters.AddWithValue("@detalles", dtVacio);
+                tvp.SqlDbType = SqlDbType.Structured;
+                tvp.TypeName = "DetalleVenta";
+                
+                try
+                {
+                    con.Open();
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+    
+                    // Si el SP no devuelve filas afectadas o devuelve -1, la cancelación fue exitosa
+                    mensaje = "Venta Cancelada Correctamente";
+                }
+                catch (Exception ex)
+                {
+                    mensaje = "Error al Cancelar la Venta: " + ex.Message;
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open)
+                        con.Close();
+                }
+            }
             return mensaje;
         }
     }

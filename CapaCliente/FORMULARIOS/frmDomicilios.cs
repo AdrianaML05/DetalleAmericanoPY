@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmDomicilios : Form
+    public partial class frmDomicilios : FormularioBase
     {
         static Conexion x = new Conexion();
         SqlConnection con = new SqlConnection();
@@ -22,7 +22,8 @@ namespace CapaCliente.FORMULARIOS
             con.ConnectionString = x.conexion();
             CargarMunicipiosConEstado();
             CargarComboClientes();
-
+            EstablecerTamanoMinimo(900, 700);
+            HabilitarMaximizar();
         }
 
         private void button9_Click(object sender, EventArgs e)

@@ -100,17 +100,32 @@
     <Compile Include="BUSQUEDAS\BusquedaProveedores.Designer.cs">
       <DependentUpon>BusquedaProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMULARIOS\FormularioBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FORMULARIOS\frmCobrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMULARIOS\frmCobrar.Designer.cs">
       <DependentUpon>frmCobrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMULARIOS\frmConsultaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmConsultaVenta.Designer.cs">
+      <DependentUpon>frmConsultaVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMULARIOS\frmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMULARIOS\frmInventario.Designer.cs">
       <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmMotivoCancelacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmMotivoCancelacion.Designer.cs">
+      <DependentUpon>frmMotivoCancelacion.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.cs">
       <SubType>Form</SubType>
@@ -208,12 +223,6 @@
     <Compile Include="FORMULARIOS\frmVenta.Designer.cs">
       <DependentUpon>frmVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMULARIOS\frmVentaDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMULARIOS\frmVentaDetalle.Designer.cs">
-      <DependentUpon>frmVentaDetalle.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BUSQUEDAS\BusquedaClientes.resx">
@@ -246,8 +255,14 @@
     <EmbeddedResource Include="FORMULARIOS\frmCobrar.resx">
       <DependentUpon>frmCobrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmConsultaVenta.resx">
+      <DependentUpon>frmConsultaVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmMotivoCancelacion.resx">
+      <DependentUpon>frmMotivoCancelacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
@@ -296,9 +311,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMULARIOS\frmVentaDetalle.resx">
-      <DependentUpon>frmVentaDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -409,6 +421,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\papelera-de-reciclaje.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca-de-verificacion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,7 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRepetir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -150,7 +150,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnRepetir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 734);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -201,32 +201,34 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(163, 150);
             this.button5.TabIndex = 4;
-            this.button5.Text = "ELIMINAR";
+            this.button5.Text = "CANCELAR";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnRepetir
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(31)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 150);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "REPETIR";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnRepetir.BackColor = System.Drawing.Color.Transparent;
+            this.btnRepetir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRepetir.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRepetir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRepetir.FlatAppearance.BorderSize = 0;
+            this.btnRepetir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnRepetir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnRepetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepetir.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepetir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(31)))));
+            this.btnRepetir.Image = ((System.Drawing.Image)(resources.GetObject("btnRepetir.Image")));
+            this.btnRepetir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRepetir.Location = new System.Drawing.Point(0, 0);
+            this.btnRepetir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRepetir.Name = "btnRepetir";
+            this.btnRepetir.Size = new System.Drawing.Size(151, 150);
+            this.btnRepetir.TabIndex = 3;
+            this.btnRepetir.Text = "REPETIR";
+            this.btnRepetir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRepetir.UseVisualStyleBackColor = false;
+            this.btnRepetir.Click += new System.EventHandler(this.btnRepetir_Click);
             // 
             // panel2
             // 
@@ -304,13 +306,13 @@
             this.DGVENTA.AllowUserToDeleteRows = false;
             this.DGVENTA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.DGVENTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVENTA.Location = new System.Drawing.Point(17, 178);
+            this.DGVENTA.Location = new System.Drawing.Point(17, 181);
             this.DGVENTA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVENTA.Name = "DGVENTA";
             this.DGVENTA.ReadOnly = true;
             this.DGVENTA.RowHeadersWidth = 51;
             this.DGVENTA.RowTemplate.Height = 24;
-            this.DGVENTA.Size = new System.Drawing.Size(819, 514);
+            this.DGVENTA.Size = new System.Drawing.Size(819, 506);
             this.DGVENTA.TabIndex = 32;
             // 
             // CBEMPLAEADOS
@@ -457,7 +459,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRepetir;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;

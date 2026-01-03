@@ -12,22 +12,25 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmVenta : Form
+    public partial class frmVenta : FormularioBase  // Cambiar de Form a FormularioBase
     {
         static Conexion x = new Conexion();
         SqlConnection con = new SqlConnection();
         DataTable dt = new DataTable();
         DataTable dtClientes = new DataTable();
         private int idClineteSelec = 1;
+        
         public frmVenta()
         {
-
-            InitializeComponent();
+   InitializeComponent();
+  
+            // Configurar adaptabilidad del formulario
+     EstablecerTamanoMinimo(1200, 800);
+       HabilitarMaximizar();
+        
             con.ConnectionString = x.conexion();
-            crgarcb();
-            CargarClientes();
-
-
+  crgarcb();
+        CargarClientes();
         }
         private void CargarClientes()
         {
@@ -235,21 +238,47 @@ namespace CapaCliente.FORMULARIOS
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                //string idProducto = reader["idProducto"].ToString();
                 string Codigo = reader["Codigo"].ToString();
                 string Nombre = reader["Nombre"].ToString();
                 decimal precio = Convert.ToDecimal(reader["PrecioVenta"]);
                 int cantidad = string.IsNullOrEmpty(txtCantidad.Text)? 1 : Convert.ToInt32(txtCantidad.Text);
-                decimal subtotal = cantidad * precio;
+                
+                reader.Close();
+                con.Close();
 
-                DataRow fila = dt.NewRow();
-                //fila["ID Producto"] = idProducto;
-                fila["Codigo de Barra"] = reader["Codigo"].ToString();
-                fila["Nombre"] = Nombre;
-                fila["Cantidad"] = cantidad;
-                fila["Precio Unitario"] = precio;
-                fila["Subtotal"] = subtotal;
-                dt.Rows.Add(fila);
+                // Buscar si el producto ya existe en el DataTable
+                bool productoExiste = false;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["Codigo de Barra"].ToString() == Codigo)
+                    {
+                        // Producto encontrado - sumar la cantidad
+                        int cantidadActual = Convert.ToInt32(row["Cantidad"]);
+                        int nuevaCantidad = cantidadActual + cantidad;
+                        decimal nuevoSubtotal = nuevaCantidad * precio;
+                        
+                        row["Cantidad"] = nuevaCantidad;
+                        row["Subtotal"] = nuevoSubtotal;
+    
+                        productoExiste = true;
+                        break;
+                    }
+                }
+                
+                // Si el producto NO existe, agregarlo como nueva fila
+                if (!productoExiste)
+                {
+                    decimal subtotal = cantidad * precio;
+                    
+                    DataRow fila = dt.NewRow();
+                    fila["Codigo de Barra"] = Codigo;
+                    fila["Nombre"] = Nombre;
+                    fila["Cantidad"] = cantidad;
+                    fila["Precio Unitario"] = precio;
+                    fila["Subtotal"] = subtotal;
+                    dt.Rows.Add(fila);
+                }
+            
                 DGVENTA.DataSource = dt;
                 txtCantidad.Clear();
                 TXTFILTRO.Clear();
@@ -258,11 +287,10 @@ namespace CapaCliente.FORMULARIOS
             }
             else
             {
+                reader.Close();
+                con.Close();
                 MessageBox.Show("Producto no encontrado.");
             }
-            reader.Close();
-            con.Close();
-
         }
         void CalcularTotal()
         {
@@ -355,71 +383,98 @@ namespace CapaCliente.FORMULARIOS
             //}
         }
 
+        // button4 - REPETIR: Limpia la venta actual sin afectar la base de datos
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Si no hay productos, no hay nada que limpiar
+            if (DGVENTA.Rows.Count == 0 || (DGVENTA.Rows.Count == 1 && DGVENTA.Rows[0].IsNewRow))
+            {
+                MessageBox.Show("No hay productos para limpiar.", "Información",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Confirmar con el usuario
+            DialogResult result = MessageBox.Show(
+            "¿Está seguro que desea limpiar todos los productos?\n\n" +
+            "Esta acción no se puede deshacer.",
+             "Confirmar Limpieza",
+               MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                LimpiarVenta();
+                MessageBox.Show("Venta limpiada correctamente.", "Éxito",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void LimpiarVenta()
         {
-            dt.Clear();
-            txtTotal.Clear();
-            TXTFILTRO.Clear();
-            txtCantidad.Clear();
-            txtFilCliente.Clear();
+           dt.Clear();
+           txtTotal.Clear();
+           TXTFILTRO.Clear();
+           txtCantidad.Clear();
+           txtFilCliente.Clear();
 
-            // Reseleccionar PÚBLICO GENERAL
-            if (dgClientes.Rows.Count > 0)
-            {
-                dgClientes.Rows[0].Selected = true;
-                idClineteSelec = Convert.ToInt32(dgClientes.Rows[0].Cells["idCliente"].Value);
+                // Reseleccionar PÚBLICO GENERAL
+                if (dgClientes.Rows.Count > 0)
+                {
+                    dgClientes.Rows[0].Selected = true;
+                    idClineteSelec = Convert.ToInt32(dgClientes.Rows[0].Cells["idCliente"].Value);
+                }
+
+                TXTFILTRO.Focus();
             }
 
-            TXTFILTRO.Focus();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            frmClientes x = new frmClientes();
-            x.ShowDialog();
-        }
-
-        // Filtra mientras escribes ne el TextBox
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            string filtro = txtFilCliente.Text.Trim();
-
-            if (string.IsNullOrEmpty(filtro))
+            private void button1_Click_1(object sender, EventArgs e)
             {
-                // Si el filtro está vacío, mostrar todos
-                dtClientes.DefaultView.RowFilter = string.Empty;
-            }
-            else
-            {
-                // Filtrar por nombre, teléfono o correo
-                dtClientes.DefaultView.RowFilter = string.Format(
-                    "NombreCompleto LIKE '%{0}%' OR NumeroTel LIKE '%{0}%' OR Correo LIKE '%{0}%'",
-                    filtro.Replace("'", "''") // Escapar comillas simples
-                );
+                frmClientes x = new frmClientes();
+                x.ShowDialog();
             }
 
-            // Seleccionar la primera fila si hay resultados
-            if (dgClientes.Rows.Count > 0)
+            // Filtra mientras escribes ne el TextBox
+            private void textBox1_TextChanged(object sender, EventArgs e)
             {
-                dgClientes.Rows[0].Selected = true;
-            }
-        }
+                string filtro = txtFilCliente.Text.Trim();
 
-        private void dgClientes_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgClientes.CurrentRow != null && dgClientes.CurrentRow.Cells["idCliente"].Value != null)
-            {
-                idClineteSelec = Convert.ToInt32(dgClientes.CurrentRow.Cells["idCliente"].Value);
-            }
-        }
+                if (string.IsNullOrEmpty(filtro))
+                {
+                    // Si el filtro está vacío, mostrar todos
+                    dtClientes.DefaultView.RowFilter = string.Empty;
+                }
+                else
+                {
+                    // Filtrar por nombre, teléfono o correo
+                    dtClientes.DefaultView.RowFilter = string.Format(
+                        "NombreCompleto LIKE '%{0}%' OR NumeroTel LIKE '%{0}%' OR Correo LIKE '%{0}%'",
+                        filtro.Replace("'", "''") // Escapar comillas simples
+                    );
+                }
 
-        private void dgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                TXTFILTRO.Focus(); // Enfocar en el textbox de código de barras
+                // Seleccionar la primera fila si hay resultados
+                if (dgClientes.Rows.Count > 0)
+                {
+                    dgClientes.Rows[0].Selected = true;
+                }
             }
-        }
+
+            private void dgClientes_SelectionChanged(object sender, EventArgs e)
+            {
+                if (dgClientes.CurrentRow != null && dgClientes.CurrentRow.Cells["idCliente"].Value != null)
+                {
+                    idClineteSelec = Convert.ToInt32(dgClientes.CurrentRow.Cells["idCliente"].Value);
+                }
+            }
+
+            private void dgClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+            {
+                if (e.RowIndex >= 0)
+                {
+                    TXTFILTRO.Focus(); // Enfocar en el textbox de código de barras
+                }
+            }
 
         private void txtFilCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -438,6 +493,39 @@ namespace CapaCliente.FORMULARIOS
         private void CBEMPLAEADOS_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           frmConsultaVenta x = new frmConsultaVenta();
+            if (x.ShowDialog() == DialogResult.OK)
+            {
+                LimpiarVenta();
+            }
+        }
+
+        // Limpia la venta actual sin afectar la base de datos
+        private void btnRepetir_Click(object sender, EventArgs e)
+        {
+         // Si no hay productos, no hay nada que limpiar
+        if (DGVENTA.Rows.Count == 0 || (DGVENTA.Rows.Count == 1 && DGVENTA.Rows[0].IsNewRow))
+        {
+          MessageBox.Show("No hay productos para limpiar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+            // Confirmar con el usuario
+            DialogResult result = MessageBox.Show(
+            "¿Está seguro que desea limpiar todos los productos?\n\n" + "Esta acción no se puede deshacer.",
+           "Confirmar Limpieza",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                LimpiarVenta();
+                MessageBox.Show("Venta limpiada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
