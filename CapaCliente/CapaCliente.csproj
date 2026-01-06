@@ -94,6 +94,12 @@
     <Compile Include="BUSQUEDAS\BusquedaPaqueteria.Designer.cs">
       <DependentUpon>BusquedaPaqueteria.cs</DependentUpon>
     </Compile>
+    <Compile Include="BUSQUEDAS\BusquedaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUSQUEDAS\BusquedaPedido.Designer.cs">
+      <DependentUpon>BusquedaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUSQUEDAS\BusquedaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,12 +223,6 @@
     <Compile Include="FORMULARIOS\frmPaqueteria.Designer.cs">
       <DependentUpon>frmPaqueteria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FORMULARIOS\frmPedidoDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FORMULARIOS\frmPedidoDetalle.Designer.cs">
-      <DependentUpon>frmPedidoDetalle.cs</DependentUpon>
-    </Compile>
     <Compile Include="FORMULARIOS\frmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BUSQUEDAS\BusquedaPaqueteria.resx">
       <DependentUpon>BusquedaPaqueteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BUSQUEDAS\BusquedaPedido.resx">
+      <DependentUpon>BusquedaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BUSQUEDAS\BusquedaProductos.resx">
       <DependentUpon>BusquedaProductos.cs</DependentUpon>
@@ -332,9 +335,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmPaqueteria.resx">
       <DependentUpon>frmPaqueteria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FORMULARIOS\frmPedidoDetalle.resx">
-      <DependentUpon>frmPedidoDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmPedidos.resx">
       <DependentUpon>frmPedidos.cs</DependentUpon>

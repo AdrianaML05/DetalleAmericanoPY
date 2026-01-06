@@ -41,10 +41,10 @@
             // 
             this.TXTFILTRO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.TXTFILTRO.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TXTFILTRO.Location = new System.Drawing.Point(227, 45);
+            this.TXTFILTRO.Location = new System.Drawing.Point(250, 45);
             this.TXTFILTRO.Multiline = true;
             this.TXTFILTRO.Name = "TXTFILTRO";
-            this.TXTFILTRO.Size = new System.Drawing.Size(397, 37);
+            this.TXTFILTRO.Size = new System.Drawing.Size(374, 37);
             this.TXTFILTRO.TabIndex = 43;
             this.TXTFILTRO.TextChanged += new System.EventHandler(this.TXTFILTRO_TextChanged);
             // 
@@ -108,9 +108,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(38, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 28);
+            this.label1.Size = new System.Drawing.Size(191, 28);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Buscar por Folio:";
+            this.label1.Text = "BUCAR POR FOLIO:";
             // 
             // BusquedaCompra
             // 
@@ -125,7 +125,6 @@
             this.Controls.Add(this.BTNBUSCAR);
             this.Controls.Add(this.DgCompras);
             this.Name = "BusquedaCompra";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Búsqueda de Compras";
             this.Load += new System.EventHandler(this.BusquedaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgCompras)).EndInit();

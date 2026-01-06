@@ -660,5 +660,10 @@ namespace CapaCliente.FORMULARIOS
 
             MessageBox.Show($"Compra cargada: {folio}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -33,12 +33,17 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgProductos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnBuscarPro = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.dgProveedor = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,16 +52,11 @@
             this.txtFoli = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBuscar1 = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscarPro = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtFolio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProveedor)).BeginInit();
@@ -125,6 +125,32 @@
             this.dgProductos.Size = new System.Drawing.Size(1104, 155);
             this.dgProductos.TabIndex = 142;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = global::CapaCliente.Properties.Resources.papelera_de_reciclaje;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(977, 450);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(162, 58);
+            this.btnEliminar.TabIndex = 141;
+            this.btnEliminar.Text = "     Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Image = global::CapaCliente.Properties.Resources.agregar;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(786, 450);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(173, 57);
+            this.btnAgregar.TabIndex = 140;
+            this.btnAgregar.Text = "      Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +169,16 @@
             this.label7.Size = new System.Drawing.Size(142, 27);
             this.label7.TabIndex = 138;
             this.label7.Text = "CANTIDAD:";
+            // 
+            // btnBuscarPro
+            // 
+            this.btnBuscarPro.Image = global::CapaCliente.Properties.Resources.lupa;
+            this.btnBuscarPro.Location = new System.Drawing.Point(412, 450);
+            this.btnBuscarPro.Name = "btnBuscarPro";
+            this.btnBuscarPro.Size = new System.Drawing.Size(75, 53);
+            this.btnBuscarPro.TabIndex = 137;
+            this.btnBuscarPro.UseVisualStyleBackColor = true;
+            this.btnBuscarPro.Click += new System.EventHandler(this.btnBuscarPro_Click);
             // 
             // txtCodigo
             // 
@@ -174,6 +210,19 @@
             this.label4.TabIndex = 134;
             this.label4.Text = "PRODUCTOS A COMPRAR";
             // 
+            // btnProveedor
+            // 
+            this.btnProveedor.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.Image = global::CapaCliente.Properties.Resources.agregar;
+            this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedor.Location = new System.Drawing.Point(873, 153);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(266, 49);
+            this.btnProveedor.TabIndex = 133;
+            this.btnProveedor.Text = "   Nuevo Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
             // dgProveedor
             // 
             this.dgProveedor.AllowUserToAddRows = false;
@@ -186,6 +235,15 @@
             this.dgProveedor.RowTemplate.Height = 24;
             this.dgProveedor.Size = new System.Drawing.Size(1104, 155);
             this.dgProveedor.TabIndex = 132;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::CapaCliente.Properties.Resources.lupa;
+            this.btnBuscar.Location = new System.Drawing.Point(412, 132);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 57);
+            this.btnBuscar.TabIndex = 131;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // txtBuscar
             // 
@@ -269,19 +327,6 @@
             this.panel2.Size = new System.Drawing.Size(193, 878);
             this.panel2.TabIndex = 172;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label6.Location = new System.Drawing.Point(850, 12);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 36);
-            this.label6.TabIndex = 173;
-            this.label6.Text = "COMPRA";
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
@@ -303,6 +348,7 @@
             this.btnRegresar.Text = "REGRESAR";
             this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnCancelar
             // 
@@ -376,63 +422,18 @@
             this.btnBuscar1.UseVisualStyleBackColor = false;
             this.btnBuscar1.Click += new System.EventHandler(this.btnBuscar1_Click);
             // 
-            // btnEliminar
+            // label6
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = global::CapaCliente.Properties.Resources.papelera_de_reciclaje;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(977, 450);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(162, 58);
-            this.btnEliminar.TabIndex = 141;
-            this.btnEliminar.Text = "     Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Image = global::CapaCliente.Properties.Resources.agregar;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(786, 450);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(173, 57);
-            this.btnAgregar.TabIndex = 140;
-            this.btnAgregar.Text = "      Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnBuscarPro
-            // 
-            this.btnBuscarPro.Image = global::CapaCliente.Properties.Resources.lupa;
-            this.btnBuscarPro.Location = new System.Drawing.Point(412, 450);
-            this.btnBuscarPro.Name = "btnBuscarPro";
-            this.btnBuscarPro.Size = new System.Drawing.Size(75, 53);
-            this.btnBuscarPro.TabIndex = 137;
-            this.btnBuscarPro.UseVisualStyleBackColor = true;
-            this.btnBuscarPro.Click += new System.EventHandler(this.btnBuscarPro_Click);
-            // 
-            // btnProveedor
-            // 
-            this.btnProveedor.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedor.Image = global::CapaCliente.Properties.Resources.agregar;
-            this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedor.Location = new System.Drawing.Point(873, 153);
-            this.btnProveedor.Name = "btnProveedor";
-            this.btnProveedor.Size = new System.Drawing.Size(266, 49);
-            this.btnProveedor.TabIndex = 133;
-            this.btnProveedor.Text = "   Nuevo Proveedor";
-            this.btnProveedor.UseVisualStyleBackColor = true;
-            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::CapaCliente.Properties.Resources.lupa;
-            this.btnBuscar.Location = new System.Drawing.Point(412, 132);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 57);
-            this.btnBuscar.TabIndex = 131;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.label6.Location = new System.Drawing.Point(850, 12);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 36);
+            this.label6.TabIndex = 173;
+            this.label6.Text = "COMPRA";
             // 
             // frmCompra
             // 
@@ -470,12 +471,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label txtFecha;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnProveedor;
-        private System.Windows.Forms.DataGridView dgProveedor;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgProductos;
@@ -487,5 +482,11 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.DataGridView dgProveedor;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

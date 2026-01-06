@@ -70,14 +70,12 @@ namespace CapaCliente.FORMULARIOS
 
         private void button7_Click(object sender, EventArgs e)
         {
-            frmMunicipio x = new frmMunicipio();
-        x.ShowDialog();
-         }
+            abrirformulario(new frmMunicipio());
+        }
 
         private void button8_Click(object sender, EventArgs e)
       {
-     frmEstado x = new frmEstado();
-        x.ShowDialog();
+            abrirformulario(new frmEstado());
         }
 
         private void button5_Click(object sender, EventArgs e)

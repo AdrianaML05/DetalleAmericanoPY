@@ -45,6 +45,7 @@
             this.TXTFILTRO.Name = "TXTFILTRO";
             this.TXTFILTRO.Size = new System.Drawing.Size(397, 37);
             this.TXTFILTRO.TabIndex = 38;
+            this.TXTFILTRO.TextChanged += new System.EventHandler(this.TXTFILTRO_TextChanged);
             // 
             // btnCancelar
             // 
@@ -55,6 +56,7 @@
             this.btnCancelar.TabIndex = 37;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -65,6 +67,7 @@
             this.btnAceptar.TabIndex = 36;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // BTNBUSCAR
             // 
@@ -75,6 +78,7 @@
             this.BTNBUSCAR.TabIndex = 35;
             this.BTNBUSCAR.Text = "BUSCAR";
             this.BTNBUSCAR.UseVisualStyleBackColor = true;
+            this.BTNBUSCAR.Click += new System.EventHandler(this.BTNBUSCAR_Click);
             // 
             // DgProductos
             // 
@@ -86,6 +90,7 @@
             this.DgProductos.RowTemplate.Height = 24;
             this.DgProductos.Size = new System.Drawing.Size(747, 408);
             this.DgProductos.TabIndex = 39;
+            this.DgProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProductos_CellDoubleClick);
             // 
             // BusquedaEstado
             // 
@@ -100,6 +105,7 @@
             this.Controls.Add(this.DgProductos);
             this.Name = "BusquedaEstado";
             this.Text = "BusquedaEstado";
+            this.Load += new System.EventHandler(this.BusquedaEstado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

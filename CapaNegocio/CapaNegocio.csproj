@@ -52,8 +52,11 @@
     <Compile Include="CLASES\Conexion.cs" />
     <Compile Include="CLASES\Domicilios.cs" />
     <Compile Include="CLASES\Empleados.cs" />
+    <Compile Include="CLASES\Estado.cs" />
     <Compile Include="CLASES\Herramientas.cs" />
+    <Compile Include="CLASES\Municipio.cs" />
     <Compile Include="CLASES\Paqueteria.cs" />
+    <Compile Include="CLASES\Pedido.cs" />
     <Compile Include="CLASES\Productos.cs" />
     <Compile Include="CLASES\Proveedores.cs" />
     <Compile Include="CLASES\Ventas.cs" />
