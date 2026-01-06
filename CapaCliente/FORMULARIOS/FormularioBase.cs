@@ -8,43 +8,43 @@ namespace CapaCliente.FORMULARIOS
     /// Clase base para todos los formularios del proyecto
   /// Proporciona funcionalidad de adaptación automática a diferentes tamaños de pantalla
     /// </summary>
-    public class FormularioBase : Form
+  public class FormularioBase : Form
     {
         // Tamaño original del formulario en tiempo de diseño
-        private Size tamanoOriginal;
+ private Size tamanoOriginal;
         private Rectangle rectanguloOriginal;
         
-     // Factor de escala para controles
-        private float factorEscalaX;
+ // Factor de escala para controles
+    private float factorEscalaX;
         private float factorEscalaY;
 
-  public FormularioBase()
+        public FormularioBase()
         {
-    // Configurar eventos
-        this.Load += FormularioBase_Load;
-    this.Resize += FormularioBase_Resize;
-     
-      // Configurar propiedades base
-    this.AutoScaleMode = AutoScaleMode.Font;
-this.StartPosition = FormStartPosition.CenterScreen;
+       // Configurar eventos
+          this.Load += FormularioBase_Load;
+      this.Resize += FormularioBase_Resize;
+          
+        // Configurar propiedades base
+      this.AutoScaleMode = AutoScaleMode.Font;
+   this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-    private void FormularioBase_Load(object sender, EventArgs e)
-        {
-            // Guardar tamaño original del formulario
-            tamanoOriginal = this.ClientSize;
+        private void FormularioBase_Load(object sender, EventArgs e)
+   {
+     // Guardar tamaño original del formulario
+    tamanoOriginal = this.ClientSize;
    rectanguloOriginal = new Rectangle(this.Location, this.Size);
-       
-     // Calcular factores de escala iniciales
+ 
+       // Calcular factores de escala iniciales
       factorEscalaX = 1.0f;
-            factorEscalaY = 1.0f;
-  
-            // Guardar posiciones originales de todos los controles
-        GuardarPosicionesOriginales(this);
-    
-    // Aplicar configuración de pantalla
-            AjustarAPantalla();
- }
+ factorEscalaY = 1.0f;
+          
+      // Guardar posiciones originales de todos los controles
+       GuardarPosicionesOriginales(this);
+       
+      // Aplicar configuración de pantalla
+    AjustarAPantalla();
+        }
 
         private void FormularioBase_Resize(object sender, EventArgs e)
         {

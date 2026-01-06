@@ -12,26 +12,26 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmVenta : FormularioBase  // Cambiar de Form a FormularioBase
+    public partial class frmVenta : Form  // VOLVER a Form (no FormularioBase)
     {
         static Conexion x = new Conexion();
-        SqlConnection con = new SqlConnection();
+    SqlConnection con = new SqlConnection();
         DataTable dt = new DataTable();
         DataTable dtClientes = new DataTable();
-        private int idClineteSelec = 1;
+ private int idClineteSelec = 1;
         
         public frmVenta()
-        {
-   InitializeComponent();
-  
-            // Configurar adaptabilidad del formulario
-     EstablecerTamanoMinimo(1200, 800);
-       HabilitarMaximizar();
-        
+   {
+    InitializeComponent();
+            
+      // QUITAR configuración de FormularioBase
+  // EstablecerTamanoMinimo(1200, 800);
+       // HabilitarMaximizar();
+    
             con.ConnectionString = x.conexion();
-  crgarcb();
-        CargarClientes();
-        }
+crgarcb();
+       CargarClientes();
+    }
         private void CargarClientes()
         {
             string query = @"

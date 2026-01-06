@@ -128,7 +128,7 @@
             // 
             // btnMix
             // 
-            this.btnMix.BackColor = System.Drawing.Color.Transparent;
+            this.btnMix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
             this.btnMix.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMix.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMix.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -151,7 +151,7 @@
             // 
             // btnEfectivo
             // 
-            this.btnEfectivo.BackColor = System.Drawing.Color.Transparent;
+            this.btnEfectivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
             this.btnEfectivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEfectivo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEfectivo.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -174,7 +174,7 @@
             // 
             // btnTarjeta
             // 
-            this.btnTarjeta.BackColor = System.Drawing.Color.Transparent;
+            this.btnTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
             this.btnTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTarjeta.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTarjeta.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -197,7 +197,7 @@
             // 
             // btnTransferencia
             // 
-            this.btnTransferencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnTransferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
             this.btnTransferencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTransferencia.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTransferencia.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -247,7 +247,7 @@
             // 
             // btnFinVenta
             // 
-            this.btnFinVenta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinVenta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinVenta.Location = new System.Drawing.Point(524, 534);
             this.btnFinVenta.Name = "btnFinVenta";
             this.btnFinVenta.Size = new System.Drawing.Size(217, 50);

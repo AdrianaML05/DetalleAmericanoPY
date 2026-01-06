@@ -207,6 +207,7 @@
             this.dgvVentas.RowTemplate.Height = 24;
             this.dgvVentas.Size = new System.Drawing.Size(868, 207);
             this.dgvVentas.TabIndex = 16;
+            this.dgvVentas.SelectionChanged += new System.EventHandler(this.dgvVentas_SelectionChanged);
             // 
             // label9
             // 

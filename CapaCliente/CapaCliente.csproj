@@ -52,6 +52,12 @@
     <Compile Include="BUSQUEDAS\BusquedaClientes.Designer.cs">
       <DependentUpon>BusquedaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="BUSQUEDAS\BusquedaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUSQUEDAS\BusquedaCompra.Designer.cs">
+      <DependentUpon>BusquedaCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUSQUEDAS\BusquedaDomicilios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,11 +127,29 @@
     <Compile Include="FORMULARIOS\frmInventario.Designer.cs">
       <DependentUpon>frmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMULARIOS\frmMix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmMix.Designer.cs">
+      <DependentUpon>frmMix.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMULARIOS\frmMotivoCancelacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMULARIOS\frmMotivoCancelacion.Designer.cs">
       <DependentUpon>frmMotivoCancelacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmPagoTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmPagoTarjeta.Designer.cs">
+      <DependentUpon>frmPagoTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\frmTransferencia.Designer.cs">
+      <DependentUpon>frmTransferencia.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.cs">
       <SubType>Form</SubType>
@@ -228,6 +252,9 @@
     <EmbeddedResource Include="BUSQUEDAS\BusquedaClientes.resx">
       <DependentUpon>BusquedaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BUSQUEDAS\BusquedaCompra.resx">
+      <DependentUpon>BusquedaCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BUSQUEDAS\BusquedaDomicilios.resx">
       <DependentUpon>BusquedaDomicilios.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,8 +288,17 @@
     <EmbeddedResource Include="FORMULARIOS\frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmMix.resx">
+      <DependentUpon>frmMix.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\frmMotivoCancelacion.resx">
       <DependentUpon>frmMotivoCancelacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmPagoTarjeta.resx">
+      <DependentUpon>frmPagoTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\frmTransferencia.resx">
+      <DependentUpon>frmTransferencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>

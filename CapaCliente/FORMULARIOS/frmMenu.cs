@@ -10,122 +10,109 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmMenu : Form
+    public partial class frmMenu : FormularioBase  // Heredar de FormularioBase
     {
         public frmMenu()
         {
             InitializeComponent();
+        
+            // Configurar el menú principal para que se adapte a la pantalla
+            EstablecerTamanoMinimo(1400, 900);
+            HabilitarMaximizar();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            // Maximizar el formulario al iniciar (opcional)
+            this.WindowState = FormWindowState.Maximized;
         }
+
         public void abrirformulario(object formopen)
         {
             if (this.Abrirform.Controls.Count > 0)
                 this.Abrirform.Controls.RemoveAt(0);
-            Form fh = formopen as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.Abrirform.Controls.Add(fh);
-            this.Abrirform.Tag = fh;
-            fh.Show();
-
+           
+                Form fh = formopen as Form;
+                fh.TopLevel = false;
+                fh.FormBorderStyle = FormBorderStyle.None;  // ⭐ QUITAR BORDES
+                fh.Dock = DockStyle.Fill;
+        
+          this.Abrirform.Controls.Add(fh);
+                this.Abrirform.Tag = fh;
+          fh.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmVenta());
-            //frmVenta x = new frmVenta();
-            //x.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmEmpleados());
-            //frmEmpleados x = new frmEmpleados();
-            //x.ShowDialog();
         }
 
         private void PRODUCTOS_Click(object sender, EventArgs e)
         {
-            abrirformulario(new frmClientes());
-            //frmClientes x = new frmClientes();
-            //x.ShowDialog();
-        }
+      abrirformulario(new frmClientes());
+      }
 
         private void button4_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmProductos());
-            //frmProductos x = new frmProductos();
-            //x.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmPedidos());
-            //frmPedidos x = new frmPedidos();
-            //x.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             frmMunicipio x = new frmMunicipio();
-            x.ShowDialog();
-        }
+        x.ShowDialog();
+         }
 
         private void button8_Click(object sender, EventArgs e)
-        {
-            frmEstado x = new frmEstado();
-            x.ShowDialog();
+      {
+     frmEstado x = new frmEstado();
+        x.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            abrirformulario(new frmDomicilios());
-            //frmDomicilios x = new frmDomicilios();
-            //x.ShowDialog();
+     abrirformulario(new frmDomicilios());
         }
 
         private void INVENTARIO_Click(object sender, EventArgs e)
         {
-            abrirformulario(new frmInventario());
-            //frmInventario x = new frmInventario();
-            //x.ShowDialog();
+          abrirformulario(new frmInventario());
         }
 
         private void PROVEEDORES_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmProveedores());
-            //frmProveedores x = new frmProveedores();
-            //x.ShowDialog();
-        }
+    }
 
         private void COMPRA_Click(object sender, EventArgs e)
-        {
+    {
             abrirformulario(new frmCompra());
-            //frmCompra x = new frmCompra();
-            //x.ShowDialog();
-        }
+      }
 
-        private void button6_Click(object sender, EventArgs e)
+    private void button6_Click(object sender, EventArgs e)
         {
             abrirformulario(new frmEnvios());
-            //frmEnvios x = new frmEnvios();
-            //x.ShowDialog();
-        }
+     }
 
         private void REGRESAR_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+     DialogResult = DialogResult.Cancel;
         }
 
         private void button10_Click(object sender, EventArgs e)
-        {
-            abrirformulario(new frmPaqueteria());
-            //frmPaqueteria x = new frmPaqueteria();
-            //x.ShowDialog();
+    {
+     abrirformulario(new frmPaqueteria());
         }
     }
 }

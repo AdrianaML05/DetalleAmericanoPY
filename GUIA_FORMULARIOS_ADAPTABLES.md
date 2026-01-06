@@ -49,29 +49,35 @@ La herencia funcionará automáticamente porque `FormularioBase` hereda de `Form`.
 
 ## ?? **Lista de Formularios a Modificar:**
 
-### **Formularios Principales:**
-- [ ] frmVenta.cs
-- [x] frmConsultaVenta.cs (YA HECHO ?)
+### **Formulario Principal (Contenedor):**
+- [x] frmMenu.cs (YA HECHO ?) - Usa FormularioBase
+
+### **?? Formularios que se abren EN PANEL (NO modificar - mantener Form):**
+- [ ] ~~frmVenta.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmEmpleados.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmClientes.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmCompra.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmDomicilios.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmInventario.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmProductos.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmProveedores.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmEnvios.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmPaqueteria.cs~~ - NO usar FormularioBase (se abre en panel)
+- [ ] ~~frmPedidos.cs~~ - NO usar FormularioBase (se abre en panel)
+
+### **Formularios Independientes (ShowDialog - SÍ usar FormularioBase):**
+- [ ] ~~frmConsultaVenta.cs~~ - Usa Form con tamaño manual (diseño complejo)
 - [ ] frmCobrar.cs
-- [ ] frmClientes.cs
-- [ ] frmCompra.cs
 - [ ] frmCompraDetalle.cs
-- [ ] frmDomicilios.cs
-- [ ] frmEmpleados.cs
-- [ ] frmEnvios.cs
-- [ ] frmEstado.cs
-- [ ] frmInventario.cs
-- [ ] frmMenu.cs
 - [ ] frmMotivoCancelacion.cs
-- [ ] frmMunicipio.cs
-- [ ] frmPaqueteria.cs
-- [ ] frmPedidos.cs
 - [ ] frmPedidoDetalle.cs
-- [ ] frmProductos.cs
-- [ ] frmProveedores.cs
 - [ ] LOGIN.cs
 
-### **Formularios de Búsqueda:**
+### **Formularios Pequeños/Diálogos (ShowDialog):**
+- [ ] frmEstado.cs
+- [ ] frmMunicipio.cs
+
+### **Formularios de Búsqueda (ShowDialog - SÍ usar FormularioBase):**
 - [ ] BusquedaClientes.cs
 - [ ] BusquedaDomicilios.cs
 - [ ] BusquedaEmpleados.cs
@@ -207,8 +213,154 @@ public BusquedaClientes()
    - Los DataGridView con `AutoSizeColumnsMode = Fill` funcionarán perfectamente.
 
 4. **Testing:**
-   - Prueba cada formulario en diferentes resoluciones.
+ - Prueba cada formulario en diferentes resoluciones.
    - Usa el modo ventana (no pantalla completa) para verificar el redimensionamiento.
+
+5. **?? IMPORTANTE - Bordes del Formulario:**  
+   - Cuando llamas a `HabilitarMaximizar()`, el formulario usa `FormBorderStyle.Sizable` (borde grueso).
+   - **Solución:** Si prefieres un borde más delgado, agrega esta línea después de `HabilitarMaximizar()`:
+   ```csharp
+   this.FormBorderStyle = FormBorderStyle.FixedSingle;  // Borde delgado
+   ```
+   - **Sin bordes:** Si NO quieres bordes, usa:
+   ```csharp
+   this.FormBorderStyle = FormBorderStyle.None;
+   ```
+   ?? **Nota:** Sin bordes, el usuario no podrá redimensionar arrastrando con el mouse.
+
+6. **?? MUY IMPORTANTE - Formularios Hijos en Paneles:**  
+   - **NO** uses `FormularioBase` para formularios que se abren DENTRO de un panel (como en frmMenu).
+   - **Solo** el formulario contenedor principal (frmMenu) debe heredar de `FormularioBase`.
+   - Los formularios hijos (frmVenta, frmEmpleados, frmClientes, etc.) deben seguir heredando de `Form`.
+   
+   **Ejemplo CORRECTO:**
+ ```csharp
+   // ? Formulario CONTENEDOR (frmMenu)
+   public partial class frmMenu : FormularioBase
+   {
+    public frmMenu()
+       {
+     InitializeComponent();
+           EstablecerTamanoMinimo(1400, 900);
+           HabilitarMaximizar();
+       }
+   }
+   
+   // ? Formularios HIJOS (se abren en el panel)
+   public partial class frmVenta : Form  // NO FormularioBase
+   {
+       public frmVenta()
+       {
+  InitializeComponent();
+           // Sin configuración de FormularioBase
+       }
+   }
+   ```
+
+---
+
+## ??? **Arquitectura MDI (Formularios en Panel):**
+
+Si tu aplicación usa un formulario principal con panel donde se cargan otros formularios:
+
+### **? HACER:**
+```csharp
+// Formulario PRINCIPAL/MENÚ
+public partial class frmMenu : FormularioBase
+{
+    public frmMenu()
+    {
+        InitializeComponent();
+    EstablecerTamanoMinimo(1400, 900);
+HabilitarMaximizar();
+        this.FormBorderStyle = FormBorderStyle.FixedSingle;
+    }
+    
+    public void abrirformulario(object formopen)
+    {
+        if (this.Abrirform.Controls.Count > 0)
+            this.Abrirform.Controls.RemoveAt(0);
+       
+        Form fh = formopen as Form;
+        fh.TopLevel = false;
+        fh.Dock = DockStyle.Fill;
+        this.Abrirform.Controls.Add(fh);
+        this.Abrirform.Tag = fh;
+        fh.Show();
+    }
+}
+```
+
+### **? NO HACER:**
+```csharp
+// NO usar FormularioBase en formularios hijos
+public partial class frmVenta : FormularioBase  // ? INCORRECTO
+{
+    // Esto causará problemas de redimensionamiento
+}
+```
+
+### **? Formularios Hijos Correctos:**
+```csharp
+// Mantener herencia normal de Form
+public partial class frmVenta : Form  // ? CORRECTO
+{
+    public frmVenta()
+    {
+   InitializeComponent();
+        // Sin configuración de FormularioBase
+    }
+}
+```
+
+---
+
+## ?? **Configuración de Bordes:**
+
+### **Opción 1: Borde Delgado (Recomendado)** ?
+```csharp
+public frmEmpleados()
+{
+    InitializeComponent();
+    EstablecerTamanoMinimo(900, 700);
+    HabilitarMaximizar();
+    
+    // Cambiar a borde delgado
+    this.FormBorderStyle = FormBorderStyle.FixedSingle;
+}
+```
+
+### **Opción 2: Sin Bordes**
+```csharp
+public frmEmpleados()
+{
+ InitializeComponent();
+    EstablecerTamanoMinimo(900, 700);
+    
+// Sin bordes (no se puede redimensionar con mouse)
+    this.FormBorderStyle = FormBorderStyle.None;
+}
+```
+
+### **Opción 3: Borde Grueso (Predeterminado de HabilitarMaximizar)**
+```csharp
+public frmEmpleados()
+{
+    InitializeComponent();
+    EstablecerTamanoMinimo(900, 700);
+    HabilitarMaximizar();  // Usa FormBorderStyle.Sizable automáticamente
+}
+```
+
+### **Opción 4: Diálogo sin Redimensionar**
+```csharp
+public frmMotivoCancelacion()
+{
+    InitializeComponent();
+    EstablecerTamanoMinimo(400, 300);
+    DeshabilitarRedimensionar();  // Usa FormBorderStyle.FixedDialog
+}
+```
 
 ---
 
@@ -243,10 +395,3 @@ Si algún formulario no se comporta como esperabas:
 ? **Fuentes Legibles:** Se ajustan automáticamente al tamaño de pantalla  
 ? **Código Limpio:** No necesitas código repetitivo en cada formulario  
 ? **Mantenible:** Un solo archivo para gestionar el comportamiento de todos  
-
----
-
-**Creado por:** GitHub Copilot  
-**Versión:** 1.0  
-**Fecha:** 2025  
-**Compatibilidad:** .NET Framework 4.8, C# 7.3

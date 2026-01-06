@@ -41,8 +41,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.RCOMPRA = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.RVENTA = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -292,8 +290,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            this.panel3.Controls.Add(this.RCOMPRA);
-            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.RVENTA);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
@@ -305,50 +301,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(208, 925);
             this.panel3.TabIndex = 56;
-            // 
-            // RCOMPRA
-            // 
-            this.RCOMPRA.BackColor = System.Drawing.Color.Transparent;
-            this.RCOMPRA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RCOMPRA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RCOMPRA.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.RCOMPRA.FlatAppearance.BorderSize = 0;
-            this.RCOMPRA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RCOMPRA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.RCOMPRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RCOMPRA.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RCOMPRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.RCOMPRA.Image = ((System.Drawing.Image)(resources.GetObject("RCOMPRA.Image")));
-            this.RCOMPRA.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.RCOMPRA.Location = new System.Drawing.Point(0, 812);
-            this.RCOMPRA.Name = "RCOMPRA";
-            this.RCOMPRA.Size = new System.Drawing.Size(208, 108);
-            this.RCOMPRA.TabIndex = 8;
-            this.RCOMPRA.Text = "REPORTE DE COMPRAS";
-            this.RCOMPRA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.RCOMPRA.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.Location = new System.Drawing.Point(0, 696);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(208, 116);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "REPORTE DE PEDIDO";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // RVENTA
             // 
@@ -368,7 +320,7 @@
             this.RVENTA.Name = "RVENTA";
             this.RVENTA.Size = new System.Drawing.Size(208, 116);
             this.RVENTA.TabIndex = 4;
-            this.RVENTA.Text = "REPORTE DE VENTA";
+            this.RVENTA.Text = "REPORTES";
             this.RVENTA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.RVENTA.UseVisualStyleBackColor = false;
             // 
@@ -505,7 +457,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmMenu";
-            this.Text = "frmMenu";
+            this.Text = "Detalle Americano";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
@@ -525,7 +477,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button COMPRA;
         private System.Windows.Forms.Button PROVEEDORES;
-        private System.Windows.Forms.Button RCOMPRA;
         private System.Windows.Forms.Button RVENTA;
         private System.Windows.Forms.Button PRODUCTOS;
         private System.Windows.Forms.Button INVENTARIO;
@@ -533,7 +484,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button10;

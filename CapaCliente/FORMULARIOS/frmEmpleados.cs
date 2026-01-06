@@ -1,5 +1,4 @@
-﻿
-using CapaNegocio.CLASES;
+﻿using CapaNegocio.CLASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +14,22 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmEmpleados : FormularioBase
+    public partial class frmEmpleados : Form  // VOLVER a Form (no FormularioBase)
     {
         static Conexion x = new Conexion();
-        SqlConnection con = new SqlConnection();
-        public frmEmpleados()
+   SqlConnection con = new SqlConnection();
+    
+    public frmEmpleados()
         {
-            InitializeComponent();
-            con.ConnectionString = x.conexion();
-            EstablecerTamanoMinimo(900, 700);
-            HabilitarMaximizar();
-        }
+       InitializeComponent();
+     
+      // QUITAR configuración de FormularioBase
+       // EstablecerTamanoMinimo(900, 700);
+   // HabilitarMaximizar();
+   // this.FormBorderStyle = FormBorderStyle.FixedSingle;
+ 
+    con.ConnectionString = x.conexion();
+     }
 
         private void button9_Click(object sender, EventArgs e)
         {

@@ -16,6 +16,11 @@ namespace CapaCliente.FORMULARIOS
     {
         static Conexion x = new Conexion();
         SqlConnection con = new SqlConnection();
+
+        // Propiedades para registro rápido desde compras
+        public string CodigoInicial { get; set; } = string.Empty;
+        public bool ModoRegistroRapido { get; set; } = false;
+
         public frmProductos()
         {
             InitializeComponent();
@@ -34,6 +39,18 @@ namespace CapaCliente.FORMULARIOS
         {
             CapaNegocio.CLASES.Herramientas h = new Herramientas();
             TXTID.Text = h.consecutivo("idProducto", "catProducto").ToString();
+
+            // Si viene de una compra con código prellenado
+            if (!string.IsNullOrEmpty(CodigoInicial))
+            {
+                TXTCODIGO.Text = CodigoInicial;
+                TXTNOMBRE.Focus(); // Enfocar el siguiente campo
+            }
+
+            if (ModoRegistroRapido)
+            {
+                this.Text = "Registro Rápido de Producto";
+            }
         }
         void limpiar()
         {
@@ -123,6 +140,36 @@ namespace CapaCliente.FORMULARIOS
 
         private void gUARDARToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void eLIMINARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lIMPIARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             // Validar primero
             if (!ValidarCampos())
             {
@@ -141,37 +188,29 @@ namespace CapaCliente.FORMULARIOS
             mun.PrecioCompra = decimal.Parse(TXTPCOMPRA.Text);
             mun.Tipo = CBCAT.SelectedItem.ToString();
             mun.Descripcion = TXTDESCRIPCION.Text.Trim();
-            
+
             // 3. Obtiene los IDs de los ComboBoxes
 
             // ¡OJO! Tu tabla también tiene 'Referencias', necesitas agregarlo
             // Asumiendo que tienes un TextBox llamado 'TXTREFERENCIAS'
 
             // 4. Llama al método para guardar y muestra el resultado
-            MessageBox.Show(mun.Guardar());
+            string resultado = mun.Guardar();
+            MessageBox.Show(resultado);
 
-            // 5. Limpia los campos
+            // 5. Si es modo registro rápido y se guardó correctamente, cerrar con OK
+            if (ModoRegistroRapido && resultado.Contains("Correctamente"))
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                return;
+            }
+
+            // 6. Limpia los campos
             limpiar();
         }
 
-        private void bUSCARToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CapaCliente.BUSQUEDAS.BusquedaProductos x = new CapaCliente.BUSQUEDAS.BusquedaProductos();
-            x.ShowDialog();
-            if (x.DialogResult == DialogResult.OK)
-            {
-                TXTID.Text = x.DgProductos.SelectedRows[0].Cells["idProducto"].Value.ToString();
-                TXTCODIGO.Text = x.DgProductos.SelectedRows[0].Cells["Codigo_de_Barras"].Value.ToString();
-                TXTNOMBRE.Text = x.DgProductos.SelectedRows[0].Cells["Nombre_del_Producto"].Value.ToString();
-                TXTPVENTA.Text = x.DgProductos.SelectedRows[0].Cells["Precio_de_Venta"].Value.ToString();
-                TXTPCOMPRA.Text = x.DgProductos.SelectedRows[0].Cells["Precio_de_Compra"].Value.ToString();
-                string Tipo = x.DgProductos.SelectedRows[0].Cells["Categoria"].Value.ToString();
-                CBCAT.SelectedValue = Tipo;
-                TXTDESCRIPCION.Text = x.DgProductos.SelectedRows[0].Cells["Descripcion"].Value.ToString();
-            }
-        }
-
-        private void eLIMINARToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             CapaNegocio.CLASES.Productos x = new CapaNegocio.CLASES.Productos();
             x.idProducto = int.Parse(TXTID.Text);
@@ -187,14 +226,21 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        private void lIMPIARToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            limpiar();
-        }
-
-        private void button9_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
+            CapaCliente.BUSQUEDAS.BusquedaProductos x = new CapaCliente.BUSQUEDAS.BusquedaProductos();
+            x.ShowDialog();
+            if (x.DialogResult == DialogResult.OK)
+            {
+                TXTID.Text = x.DgProductos.SelectedRows[0].Cells["idProducto"].Value.ToString();
+                TXTCODIGO.Text = x.DgProductos.SelectedRows[0].Cells["Codigo_de_Barras"].Value.ToString();
+                TXTNOMBRE.Text = x.DgProductos.SelectedRows[0].Cells["Nombre_del_Producto"].Value.ToString();
+                TXTPVENTA.Text = x.DgProductos.SelectedRows[0].Cells["Precio_de_Venta"].Value.ToString();
+                TXTPCOMPRA.Text = x.DgProductos.SelectedRows[0].Cells["Precio_de_Compra"].Value.ToString();
+                string Tipo = x.DgProductos.SelectedRows[0].Cells["Categoria"].Value.ToString();
+                CBCAT.SelectedValue = Tipo;
+                TXTDESCRIPCION.Text = x.DgProductos.SelectedRows[0].Cells["Descripcion"].Value.ToString();
+            }
         }
     }
     

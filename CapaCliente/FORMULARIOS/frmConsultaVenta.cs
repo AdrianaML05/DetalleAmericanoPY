@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaCliente.FORMULARIOS
 {
-    public partial class frmConsultaVenta : FormularioBase  // Cambiar de Form a FormularioBase
+    public partial class frmConsultaVenta : Form  
     {
         static Conexion x = new Conexion();
         DataTable dtVentas = new DataTable();
@@ -21,10 +21,14 @@ namespace CapaCliente.FORMULARIOS
         public frmConsultaVenta()
         {
             InitializeComponent();
- 
-            // Configurar tamaño y comportamiento del formulario
-            EstablecerTamanoMinimo(720, 700);
-            HabilitarMaximizar();
+
+            // Configurar tamaño del formulario manualmente
+            // Para que no apareca cortado al abrir
+            this.Size = new Size(730, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(730, 800);
+            this.MaximizeBox = true;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -38,11 +42,11 @@ namespace CapaCliente.FORMULARIOS
             ConfigurarDataGridVentas();
             ConfigurarDataGridDetalle();
 
-            // Establecer las Fechas por defecto para el Ultimo mes
-            dtpFechaInicio.Value = DateTime.Now.AddMonths(-1);
-            dtpFechaFin.Value = DateTime.Now;
+            // Establecer rango de fechas MUY amplio para incluir TODAS las ventas
+            dtpFechaInicio.Value = new DateTime(2020, 1, 1);  
+            dtpFechaFin.Value = new DateTime(2030, 12, 31);   
 
-            // NO cargar ventas al inicio - los grids quedan vacíos
+            // se cargan los data grids vacios al iniciar el formulario
             InicializarDataGridsVacios();
 
             // Deshabilitar el botón cancelar al inicio
@@ -52,8 +56,8 @@ namespace CapaCliente.FORMULARIOS
         private void ConfigurarComboEstado()
         {
             cmbEstado.Items.Add("Todas");
-            cmbEstado.Items.Add("Completadas");
-            cmbEstado.Items.Add("Canceladas");
+            cmbEstado.Items.Add("Activa");  
+            cmbEstado.Items.Add("Cancelada");   
             cmbEstado.SelectedIndex = 0;
         }
 
@@ -106,7 +110,8 @@ namespace CapaCliente.FORMULARIOS
 
             if (cmbEstado.SelectedIndex > 0)
             {
-                string estado = cmbEstado.SelectedItem.ToString() == "Completadas" ? "Completada" : "Cancelada";
+                // Obtener el valor exacto del ComboBox (sin conversión)
+                 string estado = cmbEstado.SelectedItem.ToString();
                 query += " AND v.Estatus = @Estatus";
             }
 
@@ -127,9 +132,10 @@ namespace CapaCliente.FORMULARIOS
 
                     if (cmbEstado.SelectedIndex > 0)
                     {
-                        string estado = cmbEstado.SelectedItem.ToString() == "Completadas" ? "Completada" : "Cancelada";
-                        cmd.Parameters.AddWithValue("@Estatus", estado);
-                    }
+               // Usar el valor directo del ComboBox
+ string estado = cmbEstado.SelectedItem.ToString();
+        cmd.Parameters.AddWithValue("@Estatus", estado);
+  }
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -155,7 +161,7 @@ namespace CapaCliente.FORMULARIOS
             // Colorear filas según estado
             foreach (DataGridViewRow row in dgvVentas.Rows)
             {
-                if (row.Cells["Estatus"].Value != null && row.Cells["Estatus"].Value.ToString() == "Cancelada")
+                if (row.Cells["Estatus"].Value != null && row.Cells["Estatus"].Value.ToString() == "Cancelada")  // Singular
                 {
                     row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
                     row.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -175,7 +181,7 @@ namespace CapaCliente.FORMULARIOS
 
                 // Habilitar/deshabilitar botón cancelar según el estado
                 string estatus = dgvVentas.Rows[0].Cells["Estatus"].Value?.ToString() ?? "";
-                btnCancelar.Enabled = (estatus == "Completada" || estatus == "Activa");
+                btnCancelar.Enabled = (estatus == "Activa");// Solo permitir cancelar ventas activas
             }
             else
             {
@@ -195,7 +201,7 @@ namespace CapaCliente.FORMULARIOS
 
                 // Habilitar/deshabilitar botón cancelar según el estado
                 string estatus = dgvVentas.CurrentRow.Cells["Estatus"].Value?.ToString() ?? "";
-                btnCancelar.Enabled = (estatus == "Completada" || estatus == "Activa");
+                btnCancelar.Enabled = (estatus == "Activa");  // Solo permitir cancelar ventas activas
             }
             else
             {
@@ -249,11 +255,13 @@ namespace CapaCliente.FORMULARIOS
             txtFolio.Clear();
             txtCliente.Clear();
             cmbEstado.SelectedIndex = 0;
-            dtpFechaInicio.Value = DateTime.Now.AddMonths(-1);
-            dtpFechaFin.Value = DateTime.Now;
+   
+            // Usar el mismo rango amplio que al cargar el formulario
+            dtpFechaInicio.Value = new DateTime(DateTime.Now.Year, 1, 1);  // Primer día del año
+         dtpFechaFin.Value = DateTime.Now.AddMonths(3);  // 3 meses al futuro
 
-            // Limpiar los DataGrids
-            InicializarDataGridsVacios();
+   // Limpiar los DataGrids
+          InicializarDataGridsVacios();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -275,9 +283,9 @@ namespace CapaCliente.FORMULARIOS
 
             // Verificar que la venta esté activa o completada
             string estatus = dgvVentas.CurrentRow.Cells["Estatus"].Value?.ToString() ?? "";
-            if (estatus != "Activa" && estatus != "Completada")
+            if (estatus != "Activa")  // Solo permitir cancelar ventas Activa
             {
-                MessageBox.Show("Solo se pueden cancelar ventas activas o completadas.", "Advertencia",
+                MessageBox.Show("Solo se pueden cancelar ventas activas.", "Advertencia",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
