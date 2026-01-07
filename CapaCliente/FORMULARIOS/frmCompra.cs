@@ -54,7 +54,7 @@ namespace CapaCliente.FORMULARIOS
             txtFoli.ReadOnly = true;
         }
 
-        #region Folio Automático
+        
 
         private void GenerarFolio()
         {
@@ -62,10 +62,7 @@ namespace CapaCliente.FORMULARIOS
             txtFoli.Text = $"C-{DateTime.Now:yyyyMMdd}";
         }
 
-        #endregion
-
-        #region Configuración de DataGrids
-
+        
         private void ConfigurarDataGridProductos()
         {
             // Crear columnas para el DataTable de productos
@@ -121,19 +118,12 @@ namespace CapaCliente.FORMULARIOS
             dgProveedor.SelectionChanged += dgProveedor_SelectionChanged;
         }
 
-        #endregion
-
-        #region Cargar Proveedores
 
         private void CargarProveedores()
         {
             string query = @"
-            SELECT 
-              idProveedores,
- Nombre,
-           numTelefono
-            FROM catProveedores 
-            ORDER BY Nombre ASC";
+            select idProveedores, Nombre, numTelefono from catProveedores 
+            order by Nombre asc";
 
             using (SqlConnection con = new SqlConnection(x.conexion()))
             {
@@ -181,8 +171,7 @@ namespace CapaCliente.FORMULARIOS
             }
             else
             {
-                dtProveedores.DefaultView.RowFilter = string.Format(
-          "Nombre LIKE '%{0}%' OR numTelefono LIKE '%{0}%'",
+                dtProveedores.DefaultView.RowFilter = string.Format("Nombre LIKE '%{0}%' OR numTelefono LIKE '%{0}%'",
                 filtro.Replace("'", "''")
                 );
             }
@@ -195,9 +184,9 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        #endregion
+        
 
-        #region Agregar Productos
+        
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -316,11 +305,8 @@ namespace CapaCliente.FORMULARIOS
         private void OfrecerRegistroProducto(string codigo, int cantidadSolicitada)
         {
             DialogResult resultado = MessageBox.Show(
-                $"El producto con código '{codigo}' no está registrado.\n\n" +
-        "¿Desea registrarlo ahora?",
-                       "Producto no encontrado",
-                MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
+                $"El producto con código '{codigo}' no está registrado.\n\n" + "¿Desea registrarlo ahora?", "Producto no encontrado",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
@@ -357,9 +343,9 @@ namespace CapaCliente.FORMULARIOS
             txtTotal.Text = total.ToString("C2");
         }
 
-        #endregion
+        
 
-        #region Eliminar Producto
+        
 
         private void EliminarProducto()
         {
@@ -370,11 +356,7 @@ namespace CapaCliente.FORMULARIOS
                 return;
             }
 
-            DialogResult result = MessageBox.Show(
-     "¿Está seguro que desea eliminar este producto de la lista?",
-     "Confirmar Eliminación",
-     MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar este producto de la lista?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -384,9 +366,7 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        #endregion
-
-        #region Guardar Compra
+       
 
         private void GuardarCompra()
         {
@@ -441,9 +421,9 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        #endregion
+        
 
-        #region Limpiar/Cancelar
+        
 
         private void LimpiarCompra()
         {
@@ -499,9 +479,9 @@ namespace CapaCliente.FORMULARIOS
             }
         }
 
-        #endregion
+        
 
-        #region Eventos de Botones
+        
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -561,7 +541,7 @@ namespace CapaCliente.FORMULARIOS
             CargarProveedores();
         }
 
-        #endregion
+        
 
         private void btnBuscar1_Click(object sender, EventArgs e)
         {
@@ -594,17 +574,7 @@ namespace CapaCliente.FORMULARIOS
             dtpFecha.Value = fecha;
 
             // Cargar detalles del producto
-            string query = @"
-           SELECT 
-            cd.idProducto,
-              p.Codigo,
-         p.Nombre,
-      cd.Cantidad,
-          cd.Precio,
- cd.SubTotal
-         FROM CompraDetalle cd
-    INNER JOIN catProducto p ON cd.idProducto = p.idProducto
-    WHERE cd.idCompra = @idCompra";
+            string query = @"select cd.idProducto, p.Codigo, p.Nombre, cd.Cantidad, cd.Precio, cd.SubTotal from CompraDetalle cd inner join catProducto p ON cd.idProducto = p.idProducto where cd.idCompra = @idCompra";
 
             using (SqlConnection con = new SqlConnection(x.conexion()))
             {
@@ -630,7 +600,7 @@ namespace CapaCliente.FORMULARIOS
             }
 
             // Cargar proveedor de la compra
-            string queryProveedor = "SELECT idProveedores FROM Compra WHERE idCompra = @idCompra";
+            string queryProveedor = "select idProveedores from Compra where idCompra = @idCompra";
             using (SqlConnection con = new SqlConnection(x.conexion()))
             {
                 con.Open();

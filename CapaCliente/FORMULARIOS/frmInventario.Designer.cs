@@ -29,57 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventario));
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.TXTID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.ComboBox();
+            this.ckBago = new System.Windows.Forms.CheckBox();
+            this.skSin = new System.Windows.Forms.CheckBox();
+            this.dgInventario = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(236, 252);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 31);
-            this.textBox2.TabIndex = 143;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label2.Location = new System.Drawing.Point(115, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 27);
-            this.label2.TabIndex = 142;
-            this.label2.Text = "STOCK :";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(120, 191);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(276, 31);
-            this.textBox4.TabIndex = 140;
             // 
             // TXTID
             // 
-            this.TXTID.Location = new System.Drawing.Point(120, 91);
+            this.TXTID.Location = new System.Drawing.Point(194, 111);
             this.TXTID.Multiline = true;
             this.TXTID.Name = "TXTID";
-            this.TXTID.Size = new System.Drawing.Size(276, 36);
+            this.TXTID.Size = new System.Drawing.Size(172, 36);
             this.TXTID.TabIndex = 139;
             // 
             // label4
@@ -87,34 +60,30 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label4.Location = new System.Drawing.Point(115, 50);
+            this.label4.Location = new System.Drawing.Point(72, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 27);
+            this.label4.Size = new System.Drawing.Size(101, 27);
             this.label4.TabIndex = 138;
-            this.label4.Text = "ID :";
+            this.label4.Text = "Codigo:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label1.Location = new System.Drawing.Point(115, 150);
+            this.label1.Location = new System.Drawing.Point(72, 196);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 27);
+            this.label1.Size = new System.Drawing.Size(134, 27);
             this.label1.TabIndex = 137;
-            this.label1.Text = "PRODUCTO :";
+            this.label1.Text = "Filtrar por:";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(193, 514);
+            this.panel2.Size = new System.Drawing.Size(193, 878);
             this.panel2.TabIndex = 175;
             // 
             // button9
@@ -131,118 +100,30 @@
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.Location = new System.Drawing.Point(0, 399);
+            this.button9.Location = new System.Drawing.Point(0, 763);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(193, 115);
             this.button9.TabIndex = 145;
             this.button9.Text = "REGRESAR";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button4.Image = global::CapaCliente.Properties.Resources.papelera_de_reciclaje;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.Location = new System.Drawing.Point(0, 300);
-            this.button4.Margin = new System.Windows.Forms.Padding(7);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(193, 100);
-            this.button4.TabIndex = 173;
-            this.button4.Text = "ELIMINAR";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::CapaCliente.Properties.Resources.verificado;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(0, 200);
-            this.button1.Margin = new System.Windows.Forms.Padding(7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 100);
-            this.button1.TabIndex = 169;
-            this.button1.Text = "GUARDAR";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button2.Image = global::CapaCliente.Properties.Resources.limpiar__1_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(0, 100);
-            this.button2.Margin = new System.Windows.Forms.Padding(7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 100);
-            this.button2.TabIndex = 170;
-            this.button2.Text = "LIMPIAR";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Clarendon BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.button3.Image = global::CapaCliente.Properties.Resources.lupa;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 100);
-            this.button3.TabIndex = 172;
-            this.button3.Text = "BUSCAR";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.dgInventario);
+            this.panel1.Controls.Add(this.skSin);
+            this.panel1.Controls.Add(this.ckBago);
+            this.panel1.Controls.Add(this.btnProducto);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TXTID);
             this.panel1.Location = new System.Drawing.Point(241, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 335);
+            this.panel1.Size = new System.Drawing.Size(1177, 650);
             this.panel1.TabIndex = 176;
             // 
             // label3
@@ -251,46 +132,112 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label3.Location = new System.Drawing.Point(390, 37);
+            this.label3.Location = new System.Drawing.Point(761, 40);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(223, 36);
             this.label3.TabIndex = 177;
             this.label3.Text = "INVENTARIO";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.label5.Location = new System.Drawing.Point(72, 35);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(275, 27);
+            this.label5.TabIndex = 144;
+            this.label5.Text = "BÚSQUEDA Y FILTROS";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::CapaCliente.Properties.Resources.lupa;
+            this.btnBuscar.Location = new System.Drawing.Point(400, 103);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 57);
+            this.btnBuscar.TabIndex = 153;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.FormattingEnabled = true;
+            this.btnProducto.Location = new System.Drawing.Point(221, 195);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(170, 31);
+            this.btnProducto.TabIndex = 154;
+            // 
+            // ckBago
+            // 
+            this.ckBago.AutoSize = true;
+            this.ckBago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckBago.Location = new System.Drawing.Point(447, 199);
+            this.ckBago.Name = "ckBago";
+            this.ckBago.Size = new System.Drawing.Size(125, 27);
+            this.ckBago.TabIndex = 155;
+            this.ckBago.Text = "Stock bajo";
+            this.ckBago.UseVisualStyleBackColor = true;
+            // 
+            // skSin
+            // 
+            this.skSin.AutoSize = true;
+            this.skSin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skSin.Location = new System.Drawing.Point(590, 200);
+            this.skSin.Name = "skSin";
+            this.skSin.Size = new System.Drawing.Size(112, 27);
+            this.skSin.TabIndex = 156;
+            this.skSin.Text = "Sin stock";
+            this.skSin.UseVisualStyleBackColor = true;
+            // 
+            // dgInventario
+            // 
+            this.dgInventario.AllowUserToAddRows = false;
+            this.dgInventario.AllowUserToDeleteRows = false;
+            this.dgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInventario.Location = new System.Drawing.Point(79, 273);
+            this.dgInventario.Name = "dgInventario";
+            this.dgInventario.ReadOnly = true;
+            this.dgInventario.RowHeadersWidth = 51;
+            this.dgInventario.RowTemplate.Height = 24;
+            this.dgInventario.Size = new System.Drawing.Size(1041, 216);
+            this.dgInventario.TabIndex = 157;
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(26)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(853, 514);
+            this.ClientSize = new System.Drawing.Size(1470, 878);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmInventario";
             this.Text = "frmInventario";
+            this.Load += new System.EventHandler(this.frmInventario_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox TXTID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.CheckBox skSin;
+        private System.Windows.Forms.CheckBox ckBago;
+        private System.Windows.Forms.ComboBox btnProducto;
+        private System.Windows.Forms.DataGridView dgInventario;
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="CLASES\Conexion.cs" />
     <Compile Include="CLASES\Domicilios.cs" />
     <Compile Include="CLASES\Empleados.cs" />
+    <Compile Include="CLASES\Envio.cs" />
     <Compile Include="CLASES\Estado.cs" />
     <Compile Include="CLASES\Herramientas.cs" />
     <Compile Include="CLASES\Municipio.cs" />

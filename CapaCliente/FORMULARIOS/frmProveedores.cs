@@ -101,14 +101,7 @@ namespace CapaCliente.FORMULARIOS
 
         private void BTNBUSCAR_Click(object sender, EventArgs e)
         {
-            CapaCliente.BUSQUEDAS.BusquedaProveedores x = new CapaCliente.BUSQUEDAS.BusquedaProveedores();
-            x.ShowDialog();
-            if (x.DialogResult == DialogResult.OK)
-            {
-                TXTID.Text = x.DgProveedores.SelectedRows[0].Cells["idProveedores"].Value.ToString();
-                TXTNOMBRE.Text = x.DgProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                TXTTELEFONO.Text = x.DgProveedores.SelectedRows[0].Cells["numTelefono"].Value.ToString();
-            }
+            
         }
 
         private void BTNLIMPIAR_Click(object sender, EventArgs e)
@@ -143,6 +136,18 @@ namespace CapaCliente.FORMULARIOS
         private void button9_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CapaCliente.BUSQUEDAS.BusquedaProveedores x = new CapaCliente.BUSQUEDAS.BusquedaProveedores();
+            x.ShowDialog();
+            if (x.DialogResult == DialogResult.OK)
+            {
+                TXTID.Text = x.DgProveedores.SelectedRows[0].Cells["idProveedores"].Value.ToString();
+                TXTNOMBRE.Text = x.DgProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                TXTTELEFONO.Text = x.DgProveedores.SelectedRows[0].Cells["numTelefono"].Value.ToString();
+            }
         }
     }
 }
