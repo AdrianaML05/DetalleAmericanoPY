@@ -48,6 +48,7 @@
             this.COMPRA = new System.Windows.Forms.Button();
             this.PROVEEDORES = new System.Windows.Forms.Button();
             this.Abrirform = new System.Windows.Forms.Panel();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -488,5 +489,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel Abrirform;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }

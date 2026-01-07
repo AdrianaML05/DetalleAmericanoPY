@@ -35,13 +35,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.ComboBox();
-            this.ckBago = new System.Windows.Forms.CheckBox();
-            this.skSin = new System.Windows.Forms.CheckBox();
             this.dgInventario = new System.Windows.Forms.DataGridView();
+            this.skSin = new System.Windows.Forms.CheckBox();
+            this.ckBago = new System.Windows.Forms.CheckBox();
+            this.btnProducto = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventario)).BeginInit();
@@ -125,71 +125,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1177, 650);
             this.panel1.TabIndex = 176;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.label3.Location = new System.Drawing.Point(761, 40);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 36);
-            this.label3.TabIndex = 177;
-            this.label3.Text = "INVENTARIO";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.label5.Location = new System.Drawing.Point(72, 35);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(275, 27);
-            this.label5.TabIndex = 144;
-            this.label5.Text = "BÚSQUEDA Y FILTROS";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::CapaCliente.Properties.Resources.lupa;
-            this.btnBuscar.Location = new System.Drawing.Point(400, 103);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 57);
-            this.btnBuscar.TabIndex = 153;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducto.FormattingEnabled = true;
-            this.btnProducto.Location = new System.Drawing.Point(221, 195);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(170, 31);
-            this.btnProducto.TabIndex = 154;
-            // 
-            // ckBago
-            // 
-            this.ckBago.AutoSize = true;
-            this.ckBago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckBago.Location = new System.Drawing.Point(447, 199);
-            this.ckBago.Name = "ckBago";
-            this.ckBago.Size = new System.Drawing.Size(125, 27);
-            this.ckBago.TabIndex = 155;
-            this.ckBago.Text = "Stock bajo";
-            this.ckBago.UseVisualStyleBackColor = true;
-            // 
-            // skSin
-            // 
-            this.skSin.AutoSize = true;
-            this.skSin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skSin.Location = new System.Drawing.Point(590, 200);
-            this.skSin.Name = "skSin";
-            this.skSin.Size = new System.Drawing.Size(112, 27);
-            this.skSin.TabIndex = 156;
-            this.skSin.Text = "Sin stock";
-            this.skSin.UseVisualStyleBackColor = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgInventario
             // 
@@ -203,6 +139,71 @@
             this.dgInventario.RowTemplate.Height = 24;
             this.dgInventario.Size = new System.Drawing.Size(1041, 216);
             this.dgInventario.TabIndex = 157;
+            // 
+            // skSin
+            // 
+            this.skSin.AutoSize = true;
+            this.skSin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skSin.Location = new System.Drawing.Point(590, 200);
+            this.skSin.Name = "skSin";
+            this.skSin.Size = new System.Drawing.Size(112, 27);
+            this.skSin.TabIndex = 156;
+            this.skSin.Text = "Sin stock";
+            this.skSin.UseVisualStyleBackColor = true;
+            // 
+            // ckBago
+            // 
+            this.ckBago.AutoSize = true;
+            this.ckBago.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckBago.Location = new System.Drawing.Point(447, 199);
+            this.ckBago.Name = "ckBago";
+            this.ckBago.Size = new System.Drawing.Size(125, 27);
+            this.ckBago.TabIndex = 155;
+            this.ckBago.Text = "Stock bajo";
+            this.ckBago.UseVisualStyleBackColor = true;
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.FormattingEnabled = true;
+            this.btnProducto.Location = new System.Drawing.Point(221, 195);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(170, 31);
+            this.btnProducto.TabIndex = 154;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::CapaCliente.Properties.Resources.lupa;
+            this.btnBuscar.Location = new System.Drawing.Point(400, 103);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 57);
+            this.btnBuscar.TabIndex = 153;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Swis721 Hv BT", 13.8F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.label5.Location = new System.Drawing.Point(72, 35);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(275, 27);
+            this.label5.TabIndex = 144;
+            this.label5.Text = "BÚSQUEDA Y FILTROS";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("News706 BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.label3.Location = new System.Drawing.Point(761, 40);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 36);
+            this.label3.TabIndex = 177;
+            this.label3.Text = "INVENTARIO";
             // 
             // frmInventario
             // 

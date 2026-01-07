@@ -320,5 +320,10 @@ namespace CapaCliente.FORMULARIOS
             dtInventario.DefaultView.RowFilter = string.Empty;
             ColorearFilas();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
